@@ -1,0 +1,165 @@
+
+.tangramScrollPanel{
+
+    overflow: hidden;
+    width: 312px;
+    position: relative;
+}
+
+.TSPOverflowY{
+    float: left;
+    width: 9px;
+    margin: 5px 5px 5px 0px;
+    height: 460px;
+}
+
+.TSPOverflowYInner{
+    display: block;
+    background-position: 3px 0px;
+}
+.scrollbar-y {
+    background: url(../../Images/scrollbackground.gif) no-repeat 3px center;
+}
+
+/***********************地图左栏样式*****************************/
+.mapChoice{
+    z-index: 50;
+    position: absolute;
+    width: 326px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: block;
+    height: 546px;
+    overflow: hidden;
+    background-color: white;
+    border:1px solid gray;
+    border-bottom:none;
+    border-top:none;
+}
+
+.mapChoicePanel{
+    width: 327px;
+    height: 502px;
+    overflow: hidden;
+    zoom: 1;
+    position: relative;
+    float:left;
+}
+
+
+#mapInfo{
+    height: auto;
+    overflow: hidden;
+    width: 318px;
+    position: relative;
+}
+
+.mapIndexBox{
+    margin-bottom: 5px;
+}
+.mapSpecialBox{
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    background-color: #FAFCFF;
+    border-bottom: 1px solid #dadbde;
+}
+.mapIndexList{
+    list-style: none;
+    overflow: hidden;
+    zoom: 1;
+    margin: 28px auto 20px;
+}
+
+
+/************ 地图选项的样式***********************/
+ul.mapIndexList li {
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    margin: 0 14px;
+}
+
+.mapListItem{
+    width: 44px;
+    height: 44px;
+    margin: 0 auto;
+    border: 0;
+    background: url(../../Images/mo_banner.png) no-repeat;
+}
+
+ul.mapIndexList .cater {
+    background-position: 0 -262px;
+}
+
+ul.mapIndexList .cityListTitle {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 0;
+    font: 400 12px "Microsoft YaHei","微软雅黑",sans-serif;
+    color: #333;
+}
+
+ul.mapIndexList .hotel {
+    background-position: 0 -111px;
+}
+
+ul.mapIndexList .movie {
+    background-position: -47px -111px;
+}
+
+
+
+
+.mapInfoTab {
+    position: absolute;
+    z-index: 200;
+    left: 326px;
+    width: 17px;
+    height: 64px;
+    overflow: hidden;
+    background-color: white;
+}
+
+#shad div {
+    position: absolute;
+}
+
+.mapinfo_but_con {
+    width: 16px;
+    height: 62px;
+    line-height: 62px;
+    cursor: pointer;
+    border: 1px solid #a0a1a3;
+    border-left: 0;
+
+}
+
+.mapinfo_but_span {
+    background-position: -109px -167px;
+}
+
+.mapinfo_but_span {
+    display: inline-block;
+    width: 5px;
+    height: 9px;
+    margin-left: 3px;
+    margin-top:26px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+ .mapinfo_but_span, .mapinfo_but_close_on .mapinfo_but_span, .mapinfo_but_open .mapinfo_but_span, .mapinfo_but_open_on .mapinfo_but_span {
+    background-image: url(../../Images/index_z_42ef450.png);
+}
+
+
+#visibility
+{
+    position:absolute;
+    z-index:999;
+    background-color:Gray;
+    margin:10px 10px 10px 10px;
+}

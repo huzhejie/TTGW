@@ -1,0 +1,1475 @@
+﻿
+/**********************************************sysManage.aspx**************************************************************/
+	.s_contentleft {
+	width:200px;
+	margin-top:30px;
+}
+.maglist {
+	width:80%;
+	margin:0 auto;
+}
+.s_li {
+	width:198px;
+	text-align:center;
+}
+.s_li p {
+	font-size:15px;
+	margin:6px 20px;
+	color:#000;
+	cursor:pointer;
+}
+.selects_li {
+	background-color:#eff8ff;
+	height:32px;
+	width:100%;
+	line-height:32px;
+}
+.s_lititle {
+	/*background-image:url(../Images/subtitle.png);*/
+	height:30px;
+	text-align:left;
+	line-height:30px;
+	font-size:15px;
+	color:#63CB30;
+}
+.s_lititle p {
+	margin-left:20px;
+	font-weight:bold;
+	font-size:17px;
+}
+.s_lititle p a
+{
+    text-decoration:none;
+    color:#000;
+    }
+
+.wel {
+	margin-left:30px;
+	margin-top:35px;
+}
+.s_contentright {
+	width:820px;
+	height:540px;
+}
+.allanno {
+	width:790px;
+	margin-left:50px;
+	margin-top:10px;
+	text-align:center;
+	height:530px;
+}
+.allanno ul {
+	list-style:none;
+}
+.allanno ul li {
+	height:30px;
+}
+.allanno ul li a {
+	text-decoration:none;
+}
+/*.allanno p {
+	font-size:17px;
+	color:black;
+	margin-top:10px;
+	font-weight:bold;
+}*/
+	.scf1head {
+	width: 80%;
+	margin-top:20px;
+}
+.syssearch {
+	width:70px;
+	height:23px;
+	margin-top:20px;
+	margin-left:40px;
+}
+.newanno {
+	width:800px;
+	margin-left:50px;
+	height:520px;
+	text-align:center;	
+}
+.titlebox {
+	width: 560px;
+	height:25px;
+	margin-top:10px;
+	border:none;
+	border-bottom:1px solid #000;
+	font-size:15px;
+}
+.myp {
+	font-size: 17px;
+	color: black;
+	margin-top: 10px;
+	font-weight: bold;
+}
+.idedit {
+	width:790px;
+	margin-left:50px;
+	height:510px;
+	text-align:center;	
+	height:530px;
+}
+.SearchUserName {
+	width:160px;
+	height:22px;
+	border:1px solid #808080;
+}
+.useredit {
+	width:790px;
+	margin-left:50px;
+	height:510px;
+	text-align:center;	
+	height:530px;
+}
+.loginrecord {
+	width:790px;
+	margin-left:50px;
+	height:510px;
+	text-align:center;	
+	height:530px;
+}
+.mistakercd {
+	width:790px;
+	margin-left:50px;
+	height:510px;
+	text-align:center;	
+	height:530px;
+}
+.add_user {
+	display:none;
+	width:400px;
+	height:530px;
+	margin:0 auto;
+}
+.adduser_div {
+	}
+.adduser_div span {
+	float:left;
+	font-size:17px;
+	margin-top:20px;
+	display:block;
+}
+.adduser_txt {
+	width:390px;
+	height:30px;
+	margin-top:15px;
+	border-radius:4px;
+	float:left;
+	border:1px solid #000;
+	font-size:17px;
+	line-height:30px;
+}
+.adduser_btn_div {
+	float:left;
+}
+.adduser_btn {
+	height: 37px;
+	line-height: 37px;
+	width: 150px;
+	margin-top:20px;
+	font-size:17px;
+}
+.add_rig {
+	display:none;
+}
+/*GridViewCSS*/
+	.GridViewStyle {
+	font-family: Arial, Sans-Serif;
+	font-size:14px;
+	table-layout: auto;
+	border-collapse: collapse;
+	border: 1px solid #1d1d1d;
+	width:100%;
+	height:422px;
+}
+/*Header and Pager styles*/
+	.HeaderStyle {
+	height:30px;
+}
+.PagerStyle {
+	}
+.HeaderStyle th {
+	padding: 0px;
+	color: #000;
+}
+.HeaderStyle a:link {
+	text-decoration:none;
+	color:#ffffff;
+	display:block;
+	text-align:left;
+	font-weight:normal;
+	border-left:1px solid #666666;
+	border-right:1px solid #1d1d1d;
+	padding-top:25px;
+	padding-bottom:9px;
+	padding-right:5px;
+	padding-left:5px;
+}
+.HeaderStyle a:hover {
+	}
+.PagerStyle table {
+	text-align:center;
+	margin:auto;
+	width:100%;
+}
+.PagerStyle table td {
+	border:0px;
+	padding:5px;
+	/*padding around pager numbers*/
+	
+}
+.PagerStyle td {
+	border-top: 1px solid #1d1d1d;
+	/*top border of pager*/
+	height:40px;
+}
+.PagerStyle a {
+	color:#000;
+	text-decoration:none;
+	padding:2px 10px 2px 10px;
+	/*border around pager numbers*/
+	border-top: 1px solid #777777;
+	border-right: 1px solid #333333;
+	border-bottom:1px solid #333333;
+	border-left: 1px solid #777777;
+}
+.PagerStyle span {
+	font-weight:bold;
+	color:#FFFFFF;
+	text-decoration:none;
+	padding:2px 10px 2px 10px;
+}
+/*RowStyles*/
+	.RowStyle td, .AltRowStyle td, .SelectedRowStyle td, .EditRowStyle td 
+/*Common Styles*/
+	 {
+	border-right: solid 1px #1d1d1d;
+	height:34px;
+}
+.RowStyle td {
+	background-color: #fff;
+	color: #000;
+	height:34px;
+}
+.AltRowStyle td {
+	background-color: #00ffDD;
+	color:#000;
+	height:34px;
+}
+.SelectedRowStyle td {
+	background-color: #ffff66;
+}
+.DetailsViewRigCss {
+	height:400px;
+}
+.HeaderStyle {
+	font-size:15px;
+	font-weight:bold;
+	text-align:center;
+	width:388px;
+	; }
+.ControlStyle {
+	float:right;
+	margin-left:20px;
+}
+.upanddelf {
+	width:790;
+	margin-left:50px;
+	height:510px;
+	text-align:center;
+	height:465px;
+}
+.uploaddiv {
+	float:left;
+	width:500px;
+	text-align:left;
+}
+.upanddelf ul {
+	list-style:none;
+}
+.upanddelf ul li {
+	height:30px;
+}
+.upanddelf ul li a {
+	text-decoration:none;
+}
+.hideFileupload {
+	visibility:hidden;
+}
+.uploadBtn {
+	height: 23px;
+	line-height:23px;
+	margin-top:20px;
+	margin-left:30px;
+}
+.searchBtn {
+	height: 23px;
+	line-height:23px;
+	margin-top:20px;
+}
+.dow {
+	float:right;
+	margin-right:20px;
+	height:30px;
+}
+.dowl {
+	float:left;
+	margin-left:15px;
+	height:30px;
+}
+.dow p {
+	color:Green;
+}
+.pages {
+	color: #999;
+	overflow: auto;
+	margin-left:100px;
+	margin-top:10px;
+}
+.pages a, .pages .cpb {
+	text-decoration:none;
+	float: left;
+	padding: 0 5px;
+	border: 1px solid #ddd;
+	background: #ffff;
+	margin:0 2px;
+	font-size:13px;
+}
+.pages a:hover {
+	background-color: #E61636;
+	/*background-color:#63CB30;*/
+	color:#fff;
+	border:1px solid #E61636;
+	text-decoration:none;
+}
+.pages .cpb {
+	font-weight: bold;
+	color: #fff;
+	background: #E61636;
+	border:1px solid #E61636;
+}
+.myentext {
+	margin-left:20px;
+	width:660px;
+	height:360px;
+}
+.mcontent {
+	text-align:left;
+	margin-bottom:10px;
+}
+.annoselect {
+	width:140px;
+	height:25px;
+	float:left;
+}
+.annoinput {
+	width:200px;
+	height:24px;
+	border:none;
+	border-bottom:1px solid #000;
+	float:left;
+}
+.sysBtn {
+	border:none;
+	background-color:White;
+	height:18px;
+	width:32px;
+	color:#666666;
+	font-size:14px;
+	cursor:pointer;
+	font-family:Microsoft YaHei,Arial, Helvetica, sans-serif, Verdana, Geneva, sans-serif;
+}
+/**************************************************************Investigator.aspx**********************************************************/
+	div#communitycontent {
+	width:1000px;
+}
+.leftSelect {
+	width: 200px;
+	padding: 0px 10px;
+	text-align: center;
+}
+.leftSelect li {
+	height: 30px;
+	line-height: 30px;
+	background-color: #88FFFF;
+	color:black;
+	background:linear-gradient(rgba(248, 248, 248, 107) 0px, rgba(248, 248, 248, 107) 100%) repeat;
+	background:-moz-linear-gradient(rgba(248, 248, 248, 107) 0px, rgba(248, 248, 248, 107) 100%) repeat;
+	background:-webkit-linear-gradient(rgba(248, 248, 248, 107) 0px, rgba(248, 248, 248, 107) 100%) repeat;
+	background:-o-linear-gradient(rgba(248, 248, 248, 107) 0px, rgba(248, 248, 248, 107) 100%) repeat;
+}
+.leftSelect li a span {
+	font-size: 15px;
+}
+.leftSelect li a {
+	position: relative;
+	width:180px;
+	height:30px;
+	display:block;
+}
+i {
+	display: inline-block;
+	visibility: hidden;
+	width: 13px;
+	height: 13px;
+	top: 8px;
+	right: 0;
+	background: url("../Images/xbg.png") no-repeat;
+}
+.com_head {
+	padding: 10px 6px;
+	background-color: #63CB30;
+	font-size: 15px;
+	font-weight: 600;
+	color: White;
+	height: 25px;
+	line-height: 25px;
+}
+.mylist {
+	width:68%;
+	float:left;
+}
+.updateoffice {
+	margin-top:10px;
+	float:left;
+	width:100%;
+}
+.addoffice {
+	margin-top:10px;
+	float:left;
+	width:100%;
+}
+.imgtitle span {
+	width: 100%;
+	float: left;
+	font-weight:bold;
+	padding: 0 0 0 10px;
+	display: inline;
+	color: #63CB30;
+	line-height: 30px;
+	font-size: 14px;
+	margin-top: 8px;
+}
+.imgtitle {
+	height:50px;
+}
+.uploaddoc {
+	width:100%;
+	float:left;
+}
+.uploaddoc>p {
+	font-weight:bold;
+	font-size:15px;
+}
+.adddoc {
+	margin-top:20px;
+}
+.adddoc>p {
+	line-height:30px;
+}
+div#addoffice {
+	margin-top:10px;
+	float:left;
+}
+.addimg {
+	margin-top:30px;
+	width:100%;
+	float:left;
+}
+.cardcontent {
+	margin-top:30px;
+	width:100%;
+	float:left;
+}
+#communitylist {
+	float:left;
+	width:300px;
+	margin-top:20px;
+}
+#communitylist ul {
+	color:White;
+	list-style:none;
+}
+#selectdiv {
+	height:50px;
+}
+#selectdiv span {
+	width: 100%;
+	float: left;
+	font-weight:bold;
+	padding: 0 0 0 10px;
+	display: inline;
+	color: #63CB30;
+	line-height: 30px;
+	font-size: 14px;
+	margin-top: 8px;
+}
+.hr {
+	width:100%;
+	height:2px;
+}
+/****************************************ShowExcel.aspx**************************************************************/
+	div#divtitle {
+	height:50px;
+	text-align:center;
+}
+.officetitle {
+	font-size:20px;
+	text-align:center;
+	line-height:50px;
+	color:#63CB30;
+}
+.wfdiv {
+	width:1000px;
+	height:800px;
+	overflow:hidden;
+	margin-top:20px;
+}
+.webalert {
+	width:900px;
+	height:800px;
+	margin-left:100px;
+}
+/***********************************************LeaderIndex.aspx;
+	**************************************************/
+	.searchsection {
+	width:549px;
+	height:30px;
+	box-shadow: 0 0 1PX 2px #63CB30;
+	-webkit-box-shadow:0 0 1px 2px #63CB30;
+	-moz-box-shadow:0 0 1px 2px #63CB30;
+	margin-top:20px;
+	/*margin-left:410px;*/
+	margin-left:10px;
+}
+.ls_btn {
+	margin-left:10px;
+	margin-top:20px;
+}
+.svalue {
+	height:30px;
+	border:none;
+	width:150px;
+}
+.vagueinput {
+	height:28px;
+	/*border:none;*/
+	width:250px;
+	border:1px solid #808080;
+	margin-left:70px;
+	border-radius:4px;
+}
+.searchsectioncon {
+	width:180px;
+	border-right:1px solid #63CB30;
+	float:left;
+	margin-left:2px;
+}
+.selectBtn {
+	width:20px;
+	height:20px;
+	background-image:url(../Images/location.png);
+	background-color:White;
+	border:none;
+	margin-top:5px;
+}
+.infor {
+	position:absolute;
+	background-color:White;
+	z-index:999;
+	width: 640px;
+	/*border: 2px solid #00DDDD;*/
+	float: left;
+	/*margin-left:270px;*/
+	margin-left:10px;
+	margin-top:59px;
+}
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clearfix {
+	zoom:1;
+}
+.drop {
+	display: none;
+	border: 2px solid #63CB30;
+}
+.location {
+	width:105px;
+	float: left;
+	text-align:center;
+	margin:5px 0px;
+	cursor:pointer;
+}
+.buxuan {
+	width:105px;
+	float: left;
+	width:100%;
+	margin:5px 0px;
+	color:Blue;
+	cursor:pointer;
+}
+.triangle {
+	position:absolute;
+	width:0px;
+	height:0px;
+	border-right:8px solid transparent;
+	border-left:8px solid transparent;
+	border-bottom:8px solid #63CB30;
+	margin-top:52px;
+	display:none;
+	float:left;
+}
+.searchresult {
+	position:absolute;
+	background-color:White;
+	z-index:999;
+	width: 250px;
+	float: left;
+	margin-left:700px;
+	margin-top:51px;
+	border:1px solid #808080;
+	display:none;
+}
+.searchresult ul li {
+	list-style:none;
+	width:100%;
+	height:20px;
+}
+.bodytop {
+	width:630px;
+	height:52px;
+}
+.bodymiddle {
+	width:100%;
+	margin-top:10px;
+}
+table.forechart {
+	font-family:Microsoft YaHei,Arial, Helvetica, sans-serif, Verdana, Geneva, sans-serif;
+	font-size:14px;
+	border-collapse:collapse;
+	border:1px solid #008000;
+}
+table.forechart td {
+	width:140px;
+	height:20px;
+	border:1px solid #008000;
+	text-align:center;
+}
+table.forecharttype {
+	font-family:Microsoft YaHei,Arial, Helvetica, sans-serif, Verdana, Geneva, sans-serif;
+	font-size:14px;
+	border-collapse:collapse;
+	border:1px solid #008000;
+}
+table.forecharttype td {
+	width:84px;
+	height:20px;
+	border:1px solid #008000;
+	text-align:center;
+}
+table.tabletotal {
+	font-family:Microsoft YaHei,Arial, Helvetica, sans-serif, Verdana, Geneva, sans-serif;
+	font-size:15px;
+	border-collapse:collapse;
+	border-bottom:2px solid #008000;
+	border-top:2px solid #008000;
+	margin-top:20px;
+}
+table.tabletotal td {
+	border:1px solid #808080;
+	background-color: #ffffff;
+	padding:8px;
+	height:38px;
+	text-align:center;
+}
+table.tabletotal td.tttd1 {
+	border-left:none;
+	width:198px;
+}
+table.tabletotal td.tttd2 {
+	width:84px;
+}
+table.tabletotal td.tttd3 {
+	border-right:2px solid #008000;
+	width:46px;
+}
+table.tabletotal td.tttd4 {
+	width:198px;
+}
+table.tabletotal td.tttd5 {
+	width:110px;
+}
+table.tabletotal td.tttd6 {
+	border-right:2px solid #008000;
+	width:118px;
+}
+table.tabletotal td.tttd7 {
+	width:117px;
+}
+table.tabletotal td.tttd8 {
+	width:143px;
+	border-right:none;
+}
+.bom {
+	width:100%;
+	margin-bottom:20px;
+	display:block;
+}
+.bomtitle {
+	width:100%;
+	height:200px;
+	background-image:url(../Images/LeaderIndexImg/map.png);
+	background-position:center;
+	-webkit-background-size:contain;
+	-moz-background-size:contain;
+	-o-background-size:contain;
+	background-size:contain;
+	background-repeat:no-repeat;
+}
+.bomtitlepro {
+	width:100%;
+	height:200px;
+	background-image:url(../Images/LeaderIndexImg/hubei.png);
+	background-position:center;
+	-webkit-background-size:contain;
+	-moz-background-size:contain;
+	-o-background-size:contain;
+	background-size:contain;
+	background-repeat:no-repeat;
+}
+.datasection {
+	width:1024px;
+	/*height:1330px;*/
+	
+}
+.subdatasection {
+	width:100%;
+	height:510px;
+	float:left;
+}
+.subdatasectionimg {
+	width:370px;
+	height:370px;
+	margin:0 auto;
+	background-image:url(../Images/LeaderIndexImg/kuai1_lined.png);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:contain;
+	float:left;
+}
+.subdatasectionimgleft {
+	width:327px;
+	height:369px;
+	float:left;
+	border-bottom:2px solid #C0C0C0;
+}
+.subdatasectionimgtop {
+	width:100%;
+	height:70px;
+	float:left;
+}
+.data_right {
+	width:326px;
+	height:70px;
+	float:right;
+	text-align:center;
+}
+.echart_yuan {
+	width:326px;
+	height:300px;
+	float:right;
+}
+.echart_yuan2 {
+	width:260px;
+	height:260px;
+	float:right;
+}
+.subdatasectionimgright {
+	width:327px;
+	height:370px;
+	float:left;
+	border-top:2px solid #C0C0C0;
+}
+.subdatasectionleft {
+	width:50%;
+	height:360px;
+	float:left;
+}
+.subdatasectionright {
+	width:50%;
+	height:360px;
+	float:left;
+	background-color:#E0E0E0;
+}
+.subdatasectionright p {
+	font-size:19px;
+	text-align:center;
+}
+.sdsr1 {
+	width:100%;
+	height:100%;
+}
+.sdsr1 p {
+	line-height:70px;
+}
+.sdsr1 span {
+	color:#448AFF;
+	font-size:20px;
+}
+.sdsr2 {
+	width:100%;
+	height:100%;
+}
+.sdsr2 p {
+	font-size:15px;
+	line-height:40px;
+}
+.sdsr2 span {
+	color:#e91e63;
+	font-size:20px;
+}
+.sdsr3 {
+	width:100%;
+	height:100%;
+}
+.sdsr3 p {
+	line-height:80px;
+	margin-left:20px;
+}
+.sdsr3 span {
+	color:#4caf50;
+	font-size:20px;
+}
+.thetri {
+	width:0px;
+	height:0px;
+	border-left:30px solid transparent;
+	border-right:30px solid transparent;
+	border-top:30px solid #E0E0E0;
+	float:left;
+	margin-left:484px;
+}
+.thetriparent {
+	width:100%;
+	height:30px;
+	float:left;
+}
+.upthetri {
+	width:100%;
+	height:5px;
+	background-color:#E0E0E0;
+	float:left;
+}
+.subdatasectionbot {
+	height:128px;
+	width:1022px;
+	border:2px solid #E0E0E0;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	-o-border-radius:5px;
+	border-radius:5px;
+	float:left;
+}
+.subdatasectionbot p {
+	line-height:40px;
+	font-size:17px;
+	text-align:center;
+}
+.subdatasectionbot span {
+	color:#4caf50;
+	font-size:19px;
+}
+.sdsb {
+	height:100%;
+	width:33%;
+	float:left;
+}
+.sdsb1 {
+	height:100%;
+	width:20%;
+	float:left;
+}
+.bom2 {
+	width:100%;
+	margin-bottom:20px;
+	display:none;
+}
+.bom1botleft {
+	width:480px;
+	margin-top:40px;
+	margin-left:-30px;
+}
+.bom1botleft p {
+	font-size:14px;
+	text-align:center;
+	margin-top:15px;
+}
+.bom1botmid {
+	height:350px;
+	width:1px;
+	margin-left:50px;
+	margin-top:60px;
+	background-color:#808080;
+}
+.bom1botright {
+	width:480px;
+	margin-top:40px;
+	margin-left:0px;
+}
+.bom1botright p {
+	font-size:14px;
+	text-align:center;
+	margin-top:15px;
+}
+.bom1botbot {
+	height:1px;
+	width:100%;
+	margin-top:50px;
+	background-color:#808080;
+}
+/*****************************************************Community.aspx********************************************************************************/
+.comsection
+{
+    width: 1024px;
+    margin: 0 auto;
+    /*border-left:1px solid #000;
+	border-right:1px solid #000;*/
+}
+
+.hideBtn
+{
+    font-family: Microsoft YaHei,Arial, Helvetica, sans-serif, Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    width:112px;
+    height:34px;
+    background-color:transparent;
+    border:none;
+}
+.hideBtn:hover
+{
+    background-color:#63FF30;
+}
+.cminfheader {
+	width:100%;
+}
+.ciheadtop {
+	width:100%;
+	height:30px;
+}
+.ciheadtop p {
+	font-size:17px;
+	color:#000;
+}
+.ciheadline {
+	height:1px;
+	background-color:#000;
+	width:100%;
+	margin-top:1px }
+.ciheadmid {
+	width:100%;
+	height:120px;
+}
+.code {
+	width:100px;
+	height:100px;
+	margin-left:100px;
+	margin-top:10px;
+}
+.code img {
+	width:100%;
+	height:100%;
+}
+.locationforvil {
+	width:100%;
+	height:100px;
+	margin-top:10px;
+	text-align:center;
+	line-height:60px;
+}
+.locationforvil p {
+	font-size:43px;
+	color:#63CB30;
+	text-align:center;
+	font-weight:bold;
+	margin-top:20px;
+}
+.cminfnav {
+	width:100%;
+	height:32px;
+}
+.project {
+	width:112px;
+	text-align:center;
+	background-color:#63CB30;
+	border-right:1px solid #000;
+	height:34px;
+	float:left;
+	line-height:34px;
+}
+.project p:hover {
+	background-color:#63FF30;
+}
+.arcgis {
+	width:114px;
+	text-align:center;
+	background-color:#63CB30;
+	line-height:30px;
+	height:30px;
+	float:left;
+	padding:2px;
+}
+.arcgis:hover {
+	background-color:#63FF30;
+}
+.vil_default_inf {
+	width:100%;
+	display:none;
+}
+.cminfcontent {
+	width:100%;
+	margin-top:20px;
+}
+.comm_left {
+	width:480px;
+}
+.comm_lefttop {
+	width:480px;
+	height:305px;
+	/*border:1px solid #000;*/
+	
+}
+.comm_lefttop img {
+	width:100%;
+	height:100%;
+}
+.comm_leftbot {
+	width:480px;
+	height:300px;
+	text-align:center;
+	/* border:1px solid #000;*/
+	
+}
+.comm_leftbot p {
+	vertical-align:middle;
+	margin-top:130px;
+}
+.comm_right {
+	width:524px;
+	height:607px;
+	/*border:1px solid #000;*/
+	margin-left:20px;
+}
+table.viltotal1 {
+	font-family:Microsoft YaHei,Arial, Helvetica, sans-serif, Verdana, Geneva, sans-serif;
+	font-size:15px;
+	border-collapse:collapse;
+}
+table.viltotal1 td {
+	border:1px solid #808080;
+	background-color:#fff;
+	height:37px;
+	text-align:center;
+}
+table.viltotal1 td.viltotd1 {
+	width:169px;
+	border-left:none;
+}
+table.viltotal1 td.viltotd2 {
+	width:218px;
+}
+.tableBtn {
+	border:none;
+	background-color:#fff;
+	font-size:15px;
+	font-family:Microsoft YaHei,Arial, Helvetica, sans-serif, Verdana, Geneva, sans-serif;
+	height:20px;
+	vertical-align:middle;
+	margin-left:8px;
+	text-decoration:underline;
+	color:Blue;
+}
+.tableimg {
+	width:20px;
+	height:20px;
+	vertical-align:middle;
+}
+table.viltotal1 td.viltotd3 {
+	width:135px;
+	border-right:none;
+}
+.datacount {
+	width:100%;
+	height:40px;
+}
+table.count {
+	/* width:100%;*/
+	border-collapse:collapse;
+	font-family:Microsoft YaHei,Arial, Helvetica, sans-serif, Verdana, Geneva, sans-serif;
+	font-size:15px;
+}
+table.count td {
+	height:37px;
+	border:1px solid #808080;
+	text-align:center;
+	background-color:White;
+	width:128px;
+}
+.responserinf {
+	width:100%;
+}
+table.rspinftable {
+	font-family:Microsoft YaHei,Arial, Helvetica, sans-serif, Verdana, Geneva, sans-serif;
+	border-collapse:collapse;
+	font-size:15px;
+}
+table.rspinftable td {
+	text-align:center;
+	border:1px solid #808080;
+	height:37px;
+	background-color:#fff;
+}
+table.rspinftable td.rsptbtd1 {
+	width:170px;
+	border-left:none;
+}
+table.rspinftable td.rsptbtd2 {
+	width:170px;
+}
+table.rspinftable td.rsptbtd3 {
+	width:255px;
+}
+table.rspinftable td.rsptbtd4 {
+	width:170px;
+}
+table.rspinftable td.rsptbtd5 {
+	width:255px;
+	border-right:none;
+}
+.comm_bottom {
+	margin-top:20px;
+	width:100%;
+}
+.cminffooter {
+	width:100%;
+	margin-top:20px;
+}
+.vil_default {
+	width:100%;
+	margin-bottom:60px;
+}
+.Residential_security {
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 20px;
+	font-family:Microsoft YaHei,Arial, Helvetica, sans-serif, Verdana, Geneva, sans-serif;
+	font-size:15px;
+	color:#000;
+}
+table.TResidential_security {
+	border-collapse:collapse;
+	width:1024px;
+	margin-left:auto;
+	margin-right:auto;
+	border-top:2px solid #008000;
+	border-bottom:2px solid #008000;
+}
+table.TResidential_security td {
+	padding:8px;
+	height:38px;
+	border:1px solid #808080;
+}
+.tabletitle {
+	font-weight:bold;
+}
+.environmentally_protective_facility {
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 20px;
+}
+table.Tenvironmentally_protective_facility {
+	border-collapse:collapse;
+	width:1024px;
+	margin-left:auto;
+	margin-right:auto;
+	border-top:2px solid #008000;
+	border-bottom:2px solid #008000;
+	font-size:15px ;
+	color:#000;
+	font-family:Microsoft YaHei,Arial, Helvetica, sans-serif, Verdana, Geneva, sans-serif;
+}
+table.Tenvironmentally_protective_facility td {
+	border:1px solid #808080;
+	padding:8px;
+}
+.public_service_facility {
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 20px;
+}
+table.Tpublic_service_facility {
+	font-family:Microsoft YaHei,Arial, Helvetica, sans-serif, Verdana, Geneva, sans-serif;
+	font-size: 15px;
+	width: 1024px;
+	margin-right: auto;
+	margin-left: auto;
+	border-collapse:collapse;
+	border-top:2px solid #008000;
+	border-bottom:2px solid #008000;
+}
+table.Tpublic_service_facility td {
+	height:38px;
+	border:1px solid #808080;
+	padding:8px;
+}
+.envionmrnt_business {
+	text-align:center;
+	vertical-align:middle;
+	margin-top:20px;
+}
+table.Tenvionmrnt_business {
+	border-collapse:collapse;
+	width:1024px;
+	border-bottom:2px solid #008000;
+	border-top:2px solid #008000;
+	font-size:15px;
+	font-family:Microsoft YaHei,Arial, Helvetica, sans-serif, Verdana, Geneva, sans-serif;
+	margin-left:auto;
+	margin-right:auto;
+}
+table.Tenvionmrnt_business td {
+	height:38px;
+	border:1px solid #808080;
+}
+.project_list_index {
+	margin-top:20px;
+	vertical-align:middle;
+	text-align:center;
+}
+table.Tproject_list_index {
+	border-collapse:collapse;
+	width:1024px;
+	border-bottom:2px solid #008000;
+	border-top: 2px solid #008000;
+	margin-left:auto;
+	margin-right:auto;
+	font-family:Microsoft YaHei,Arial, Helvetica, sans-serif, Verdana, Geneva, sans-serif;
+	font-size:15px;
+	color: #000;
+}
+table.Tproject_list_index th {
+	border:1px solid #808080;
+	border-left:none;
+	border-bottom: 2px solid #008000;
+}
+table.Tproject_list_index td {
+	border:1px solid #808080;
+	height:38px;
+}
+.basic_facility {
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 20px;
+	font-family:Microsoft YaHei,Arial, Helvetica, sans-serif, Verdana, Geneva, sans-serif;
+}
+.Tbasic_facility {
+	width:1000px;
+	margin:0 auto;
+	border-collapse:collapse;
+	border-bottom:2px solid #008000;
+	border-top:2px solid #008000;
+	font-size:15px;
+}
+table.Tbasic_facility td {
+	border:1px solid #808080;
+	height:38px;
+	padding:8px;
+}
+.tablecaption {
+	font-family:Microsoft YaHei,Arial, Helvetica, sans-serif, Verdana, Geneva, sans-serif;
+	font-weight:bold;
+}
+.indicator {
+	width:100%;
+	margin:0 auto;
+}
+.selecttime {
+	width:100%;
+	margin-top:20px;
+	float:left;
+}
+.selecttime span {
+	float:left;
+	font-size:15px;
+	margin-left:100px;
+}
+.selectindicator {
+	width:100%;
+	height:200px;
+	margin-top:20px;
+	float:left;
+}
+.cominfo_tab {
+	border-bottom: 1px solid #E8E8E8;
+	height: 44px;
+	line-height:44px;
+	text-align:center;
+}
+.cominfo_tab a {
+	margin:0 10px;
+}
+.cominfo_tab a.on {
+	border-bottom:2px solid #42A0FE;
+	font-weight:700;
+}
+.indicatorNav {
+	width:100%;
+}
+.navArea {
+	overflow:hidden;
+	text-align:center;
+	margin:0 auto;
+}
+.navArea a {
+	position:relative;
+	width:130px;
+	margin-left:10px;
+	float:left;
+	text-align:center;
+	text-decoration:none;
+	color:black;
+	display:inline-block;
+	border:2px solid rgba(248, 248, 248, 0.7);
+	margin:0 0 12px 10px;
+	background:#f8f8f8;
+	background:linear-gradient(rgba(248, 248, 248, 0.7) 0px, rgba(248, 248, 248, 0.7) 100%) repeat;
+	background:-moz-linear-gradient(rgba(248, 248, 248, 0.7) 0px, rgba(248, 248, 248, 0.7) 100%) repeat;
+	background:-webkit-linear-gradient(rgba(248, 248, 248, 0.7) 0px, rgba(248, 248, 248, 0.7) 100%) repeat;
+	background:-o-linear-gradient(rgba(248, 248, 248, 0.7) 0px, rgba(248, 248, 248, 0.7) 100%) repeat;
+}
+.navArea a span {
+	display: inline-block;
+	margin:2px 4px;
+	color:black;
+	font-size: 11px;
+}
+.navArea a:hover i {
+	background-position: -13px 0;
+}
+.navArea ul .secondTree {
+	width:148px;
+	font-size:14px;
+	height:28px;
+	margin:4px 4px;
+}
+.navArea ul .specialTree {
+	width:125px;
+	font-size:14px;
+	height:38px;
+	margin:4px 6px;
+}
+.navArea ul li {
+	list-style: none;
+}
+.navArea ul .secondTree span {
+	margin:4px 4px;
+}
+i {
+	position: absolute;
+	visibility: hidden;
+	display: inline-block;
+	background-position:-13px 0;
+	font-size: 1px;
+	height: 13px;
+	width: 13px;
+	right: 0;
+	top: 8px;
+	background: url(../Images/xbg.png) no-repeat;
+}
+.navArea .thirdTree {
+	margin:4px 0 4px 0 ;
+	margin-left:15px;
+}
+.navArea a:hover {
+	border:2px solid #42A0FE;
+}
+.dn {
+	display:none;
+}
+.choiceSize {
+	height: 150px;
+	width:146px;
+	margin:0px 5px;
+}
+.echartBtn {
+	width:80px;
+	display:block;
+	margin:0 auto;
+}
+/***********************************************EditAnnounce.aspx***********************************************************************************/
+	.editanno {
+	width:800px;
+	margin:0 auto;
+	text-align:center;
+}
+/***********************************************InvestigatorManage.aspx*********************************************************************************/
+	.managesection {
+	width:100%;
+	float:left;
+	margin-top:10px;
+}
+.selectinv {
+	margin-top:10px;
+	float:left;
+	width:100%;
+}
+.opreatetitle {
+	width:100%;
+	height:50px;
+}
+.opreatetitle span {
+	font-size:16px;
+	color:#63CB30;
+	font-weight:bold;
+	line-height:50px;
+}
+.allocate_title {
+	border-bottom:1px solid #E8E8E8;
+	height:44px;
+	line-height:44px;
+	text-align:left;
+}
+.allocate_title a {
+	margin:0 10px;
+}
+.allocate_title a.on {
+	border-bottom:2px solid #42A0FE;
+	font-weight:700;
+}
+.county_name {
+	height:30px;
+	line-height:30px;
+	font-size:15px;
+	float:left;
+	border-bottom:1px solid #008000;
+}
+.couArea {
+	width:100%;
+	float:left;
+}
+.coulist {
+	width:100%;
+	float:left;
+	margin-top:10px;
+}
+.com_li {
+	width:120px;
+	font-size:13px;
+	height:20px;
+	margin:4px 4px;
+} 

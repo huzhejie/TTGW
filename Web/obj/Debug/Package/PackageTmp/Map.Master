@@ -1,0 +1,86 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Map.master.cs" Inherits="TTG.Web.Map" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+     <link href="~/Css/Main.css" rel="stylesheet" type="text/css" />
+   
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <div class="m_container">
+        <div class="m_header">
+            <div class="section">
+                    <div class="m_hleft fl">
+                        <div class="m_img fr">
+                            <img src="./img/logo.png" alt="" />
+                          </div>
+                    </div>
+                    <div class="m_hright fl">
+                              <div class="title">
+                                    <p style="font-size:45px;font-weight:bold;">三峡城镇小区帮扶监测信息平台</p>
+                              </div>
+                    </div>
+             </div>
+        </div>
+
+      
+    
+        <div class="thinnav">
+        </div>
+        <div class="m_main">
+            
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+                </asp:ContentPlaceHolder>
+            
+        </div>
+          <div class="fl friendLinks">
+            <div class="section">
+                <div class="fl left">
+                    <span>相关链接:</span> <a href="http://www.crhdc.com.cn/" target="_blank">长江水利水电开发总公司</a>
+                    | <a href="http://www.3g.gov.cn/index.ycs" target="_blank">国务院三峡工程建设委员会办公室</a> |
+                    <a href="http://www.cjw.com.cn/" target="_blank">水利部长江水利委员会</a> | <a href="http://www.mwr.gov.cn/"
+                        target="_blank">中国水利部 </a>| <a href="http://www.mohurd.gov.cn/" target="_blank">中国建设部</a>
+                    |
+                </div>
+                <div class="fr right">
+                    子公司链接：
+                    <select name="compLink" id="compLink" class="selects" onchange="window.open(this.value)">
+                        <option value="#">湖北分公司</option>
+                        <option value="#">重庆分公司</option>
+                        <option value="#">四川分公司</option>
+                        <option value="#">云南分公司</option>
+                        <option value="#">贵州分公司</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="myfooter">
+            <div class="section" style="width:1000px;">
+                <div class="fl footleft">
+                    地址：湖北省武汉市江岸区解放大道1863号 邮编：430010 联系电话：027－82820272
+                    <br>
+                    版权所有© Copyright © 2011 All Rights Reserved 鄂ICP备05003448
+                </div>
+                <div class="fr footright">
+                    <a href="/News/Recruitment.aspx?cid=514">人才招聘 </a>| <a href="/News/Contact.aspx?cid=526">
+                        联系我们 </a>| <a href="/News/Message.aspx?cid=516">留言反馈</a><br>
+                    总访问量：32768次 <a href="/_JBRIEMS/Index.aspx" target="_blank">管理</a> <a href="http://www.cjwym.com.cn/"
+                        target="_blank">技术支持</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+
+
+  
+</html>

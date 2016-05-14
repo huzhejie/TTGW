@@ -1,0 +1,183 @@
+body, input, textarea,  button {
+    line-height: 1.7;
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
+    color: #222;
+    word-wrap: break-word;
+}
+
+input {
+    outline: 0;
+}
+input[type=checkbox] {
+    margin: 0 5px 0 0;
+    vertical-align: 0;
+}
+input[type=submit] {
+    margin-right: 10px;
+}
+
+.loginTitle {
+    margin: 0;
+    padding: 25px 15px;
+    border: 0;
+    background: 0;
+    filter: none;
+    box-shadow: none;
+    text-align: center;
+    cursor: default;
+}
+
+ .loginTitleText {
+    display: block;
+    color: #787878;
+    text-shadow: none;
+}
+
+ .loginTitleText .title {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+ .loginTitleText .subTitle {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+ .inputWrap:first-of-type {
+    border-top: 1px solid #eee;
+}
+ .inputWrap {
+    position: relative;
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+}
+
+ .formTestInput {
+    width: 100%;
+    padding: 15px 10px;
+    font-size: 14px;
+    line-height: 1;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #787878;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.command {
+    position: relative;
+    margin-top: 20px;
+    height: 33px;
+}
+
+ .icoShowPass {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    cursor: pointer;
+}
+
+.icoShowPass {
+    background-position: -27px -1px;
+    width: 21px;
+    height: 13px;
+}
+
+
+
+.actions input[type=checkbox] {
+    margin-right: 3px;
+}
+
+.submitStyle {
+    font-size: 14px;
+    line-height: 1.7;
+    color: white;
+    text-decoration: none!important;
+    vertical-align: middle;
+    display: inline-block;
+    _display: inline!important;
+    text-align: center;
+    padding: 4px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    white-space: nowrap;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.actions {
+    margin-left: 10px;
+    color: #787878;
+    height: 33px;
+    line-height: 33px;
+}
+
+input[type=submit] {
+    background: #0077d9;
+    border: 0;
+    text-shadow: none;
+    box-shadow: none;
+    padding: 4px 17px;
+    -webkit-appearance: none;
+}
+
+
+ a {
+    color: #787878;
+    text-decoration: none;
+    outline: 0;
+}
+
+
+
+
+
+.logBox.signDialog .sns a:first-child {
+    border-radius: 0 0 0 5px;
+}
+.logBox.signDialog .sns a {
+    float: left;
+    width: 50%;
+    height: 45px;
+    margin-top: 15px;
+    line-height: 45px;
+    text-align: center;
+    color: #595959;
+    background-color: #fafafa;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+.sns a span.icon {
+    margin-right: 6px;
+    margin-top: -1px;
+}
+.icoWeibo, .icoShowPass, .icoQQ {
+    background-image: url(../images/icons_0d88bbeb78.png);
+}
+
+.icoWeibo {
+    background-position: -1px -1px;
+    width: 24px;
+    height: 19px;
+}
+
+.icoQQ {
+    background-position: -1px -22px;
+    width: 19px;
+    height: 21px;
+}

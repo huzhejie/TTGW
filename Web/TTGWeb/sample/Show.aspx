@@ -1,0 +1,224 @@
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeBehind="Show.aspx.cs" Inherits="TTG.Web.TTGWeb.sample.Show" Title="显示页" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+   <table style="width: 100%;" cellpadding="2" cellspacing="1" class="border">
+                <tr>                   
+                    <td class="tdbg">
+                               
+<table cellSpacing="0" cellPadding="0" width="100%" border="0">
+	<tr>
+	<td height="25" width="30%" align="right">
+		community_id
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lblcommunity_id" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		sample_house_num
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lblsample_house_num" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		sample_family_pop
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lblsample_family_pop" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		sample_labor_force_pop
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lblsample_labor_force_pop" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		sample_employment_lf_pop
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lblsample_employment_lf_pop" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		sample_primary_industry_lf_pop
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lblsample_primary_industry_lf_pop" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		sample_secondary_industry_lf_pop
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lblsample_secondary_industry_lf_pop" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		sample_tertiary_industry_lf_pop
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lblsample_tertiary_industry_lf_pop" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		sample_PCDI
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lblsample_PCDI" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		sample_wages_income
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lblsample_wages_income" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		sample_family_run_pure_income
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lblsample_family_run_pure_income" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		sample_property_income
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lblsample_property_income" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		sample_transfer_income
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lblsample_transfer_income" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		sample_CONSP
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lblsample_CONSP" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		tsunset1
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lbltsunset1" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		tsunset2
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lbltsunset2" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		tsunset3
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lbltsunset3" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		tsunset4
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lbltsunset4" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		tsunset5
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lbltsunset5" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		tsunset6
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lbltsunset6" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		tsunset7
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lbltsunset7" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		tsunset8
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lbltsunset8" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		tsunset9
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lbltsunset9" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		tsunset10
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lbltsunset10" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		tsunset11
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lbltsunset11" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		tsunset12
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lbltsunset12" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		lock_tables
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lbllock_tables" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		check_status
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lblcheck_status" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		statistics_date
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lblstatistics_date" runat="server"></asp:Label>
+	</td></tr>
+</table>
+
+                    </td>
+                </tr>
+            </table>
+</asp:Content>
+<%--<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceCheckright" runat="server">
+</asp:Content>--%>
+
+
+
+

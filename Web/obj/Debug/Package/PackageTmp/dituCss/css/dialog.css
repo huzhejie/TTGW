@@ -1,0 +1,203 @@
+.choice-filter{
+
+}
+.clearfix{
+
+}
+#mapInfo .toolbar {
+    border: 1px solid #d5d8dc;
+    background-color: #f8f9fc;
+    width: 100%;
+    zoom: 1;
+}
+
+
+#mapInfo .toolItem {
+    float: left;
+    width: 104px;
+    line-height: 14px;
+    padding: 6px 0;
+    text-align: center;
+    cursor: pointer;
+    zoom: 1;
+    cursor: pointer;
+    position: relative;
+    background-color: #f8f9fc;
+    z-index: 999
+}
+#mapInfo.toolItem .arrow {
+    background-position: -11px 0;
+    margin-left: 6px;
+}
+
+#mapInfo .toolItem .icon-cater {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 4px;
+    width: 7px;
+    background: url(../images/arrow.png) no-repeat;
+}
+.choiceList {
+    padding: 5px 9px 5px;
+
+}
+
+.searchContent{
+    position: absolute;
+    left: 0;
+    width: 280px;
+    height:auto;
+}
+.searchItem {
+    padding: 6px 0;
+    height:80px ;
+}
+.searchItem .no0 {
+    background-image: url(../images/markersnew.png);
+    width: 19px;
+    height: 29px;
+    display: inline-block;
+    margin-left: 6px;
+    margin-top: 4px;
+    background-position: 0 -198px;
+}
+.searchItem .no1{
+    background-image: url(../images/markersnew.png);
+    width: 19px;
+    height: 29px;
+    display: inline-block;
+    margin-left: 6px;
+    margin-top: 4px;
+    background-position: -24px -198px;
+}
+.searchItem .no2 {
+    background-image: url(../images/markersnew.png);
+    width: 19px;
+    height: 29px;
+    display: inline-block;
+    margin-left: 6px;
+    margin-top: 4px;
+    background-position: -48px -198px;
+}
+.searchItem .no3 {
+    background-image: url(../images/markersnew.png);
+    width: 19px;
+    height: 29px;
+    display: inline-block;
+    margin-left: 6px;
+    margin-top: 4px;
+    background-position: -72px -198px;
+}
+.searchItem .no4 {
+    background-image: url(../images/markersnew.png);
+    width: 19px;
+    height: 29px;
+    display: inline-block;
+    margin-left: 6px;
+    margin-top: 4px;
+    background-position: -96px -198px;
+}
+.searchItem .no5 {
+    background-image: url(../images/markersnew.png);
+    width: 19px;
+    height: 29px;
+    display: inline-block;
+    margin-left: 6px;
+    margin-top: 4px;
+    background-position: -120px -198px;
+}
+.searchItem .no6 {
+    background-image: url(../images/markersnew.png);
+    width: 19px;
+    height: 29px;
+    display: inline-block;
+    margin-left: 6px;
+    margin-top: 4px;
+    background-position: -144px -198px;
+}
+.searchItem .no7 {
+    background-image: url(../images/markersnew.png);
+    width: 19px;
+    height: 29px;
+    display: inline-block;
+    margin-left: 6px;
+    margin-top: 4px;
+    background-position: -168px -198px;
+}
+.searchItem .no8 {
+    background-image: url(../images/markersnew.png);
+    width: 19px;
+    height: 29px;
+    display: inline-block;
+    margin-left: 6px;
+    margin-top: 4px;
+    background-position: -192px -198px;
+}
+.searchItem .no9 {
+    background-image: url(../images/markersnew.png);
+    width: 19px;
+    height: 29px;
+    display: inline-block;
+    margin-left: 6px;
+    margin-top: 4px;
+    background-position: -216px -198px;
+}
+.searchItem .choiceListR {
+    float: right;
+    width: 75px;
+    margin-right: 10px;
+    text-align: right;
+}
+
+#pagelist a{
+    display: inline-block;
+    border: #e7ecf0 solid 1px;
+    padding: 5px 6px 3px;
+    text-decoration: none;
+}
+.h20 {
+    height: 20px;
+}
+.mt5 {
+    margin-top: 5px!important;
+}
+.searchItem .streetPano {
+    width: 13px;
+    height: 17px;
+    display: inline-block;
+    background-position: 0 -260px;
+    line-height: 17px;
+}
+.ml5 {
+    margin-left: 5px!important;
+}
+.mr85{
+    margin-right: 85px;
+}
+.ml30{
+    margin-left: 30px!important;
+}
+.mb5 {
+    margin-bottom: 5px!important;
+}
+.cf {
+    zoom: 1;
+}
+.nblue {
+    color: #36C!important;
+}
+.searchItem .imgWrap {
+    position: relative;
+}
+
+.searchItem .addr {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.searchItem .row {
+              padding: 5px 0;
+              line-height: 1.2;
+}

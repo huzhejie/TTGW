@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{53995DBB-9836-4647-AD22-865884FDEB9E}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>TTG.Model</AssemblyName>
+    <RootNamespace>TTG.Model</RootNamespace>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <PublishUrl>http://localhost/Maticsoft.Model/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SysNode.cs" />
+    <Compile Include="TTGWeb\alter_field.cs" />
+    <Compile Include="TTGWeb\Community_Base.cs" />
+    <Compile Include="TTGWeb\community_bet_dwellings_road_problem.cs" />
+    <Compile Include="TTGWeb\community_bet_dwellings_road_problem_finished.cs" />
+    <Compile Include="TTGWeb\community_building.cs" />
+    <Compile Include="TTGWeb\community_business_pop_problem.cs" />
+    <Compile Include="TTGWeb\community_business_pop_problem_finished.cs" />
+    <Compile Include="TTGWeb\community_commerce.cs" />
+    <Compile Include="TTGWeb\community_commerce_service_problem.cs" />
+    <Compile Include="TTGWeb\community_commerce_service_problem_finished.cs" />
+    <Compile Include="TTGWeb\community_concil_house.cs" />
+    <Compile Include="TTGWeb\community_council_building_problem.cs" />
+    <Compile Include="TTGWeb\community_council_building_problem_finished.cs" />
+    <Compile Include="TTGWeb\community_cultrue_sports_problem.cs" />
+    <Compile Include="TTGWeb\community_cultrue_sports_problem_finished.cs" />
+    <Compile Include="TTGWeb\community_culture_sports.cs" />
+    <Compile Include="TTGWeb\community_education.cs" />
+    <Compile Include="TTGWeb\community_elec_supply.cs" />
+    <Compile Include="TTGWeb\community_elec_supply_problem.cs" />
+    <Compile Include="TTGWeb\community_elec_supply_problem_finished.cs" />
+    <Compile Include="TTGWeb\community_environmental_hygiene.cs" />
+    <Compile Include="TTGWeb\community_ff_problem.cs" />
+    <Compile Include="TTGWeb\community_ff_problem_finished.cs" />
+    <Compile Include="TTGWeb\community_fire_fighting.cs" />
+    <Compile Include="TTGWeb\community_geologic_hazard.cs" />
+    <Compile Include="TTGWeb\community_greening_problem.cs" />
+    <Compile Include="TTGWeb\community_greening_problem_finished.cs" />
+    <Compile Include="TTGWeb\community_green_fields.cs" />
+    <Compile Include="TTGWeb\community_immigrant.cs" />
+    <Compile Include="TTGWeb\Community_Indicator.cs" />
+    <Compile Include="TTGWeb\community_kindergarten_problem.cs" />
+    <Compile Include="TTGWeb\community_kindergarten_problem_finished.cs" />
+    <Compile Include="TTGWeb\community_land.cs" />
+    <Compile Include="TTGWeb\community_letter_view.cs" />
+    <Compile Include="TTGWeb\community_lf_employment.cs" />
+    <Compile Include="TTGWeb\community_light.cs" />
+    <Compile Include="TTGWeb\community_lighting_problem.cs" />
+    <Compile Include="TTGWeb\community_lighting_problem_finished.cs" />
+    <Compile Include="TTGWeb\community_management_responsible.cs" />
+    <Compile Include="TTGWeb\community_medical.cs" />
+    <Compile Include="TTGWeb\community_medical_problem.cs" />
+    <Compile Include="TTGWeb\community_medical_problem_finished.cs" />
+    <Compile Include="TTGWeb\community_natural_gas.cs" />
+    <Compile Include="TTGWeb\community_parking_lot.cs" />
+    <Compile Include="TTGWeb\community_parking_problem.cs" />
+    <Compile Include="TTGWeb\community_parking_problem_finished.cs" />
+    <Compile Include="TTGWeb\community_population.cs" />
+    <Compile Include="TTGWeb\community_problem_finished_contrast_info.cs" />
+    <Compile Include="TTGWeb\community_problem_type_contrast.cs" />
+    <Compile Include="TTGWeb\community_project.cs" />
+    <Compile Include="TTGWeb\community_project_associate.cs" />
+    <Compile Include="TTGWeb\community_road.cs" />
+    <Compile Include="TTGWeb\community_road_problem.cs" />
+    <Compile Include="TTGWeb\community_road_problem_finished.cs" />
+    <Compile Include="TTGWeb\community_sanitation_problem.cs" />
+    <Compile Include="TTGWeb\community_sanitation_problem_finished.cs" />
+    <Compile Include="TTGWeb\community_security.cs" />
+    <Compile Include="TTGWeb\community_service.cs" />
+    <Compile Include="TTGWeb\community_service_problem.cs" />
+    <Compile Include="TTGWeb\community_service_problem_finished.cs" />
+    <Compile Include="TTGWeb\community_shop_front.cs" />
+    <Compile Include="TTGWeb\community_social_insurance.cs" />
+    <Compile Include="TTGWeb\community_traffic.cs" />
+    <Compile Include="TTGWeb\community_water_drain.cs" />
+    <Compile Include="TTGWeb\community_water_drain_problem.cs" />
+    <Compile Include="TTGWeb\community_water_drain_problem_finished.cs" />
+    <Compile Include="TTGWeb\community_water_supply.cs" />
+    <Compile Include="TTGWeb\community_water_supply_problem.cs" />
+    <Compile Include="TTGWeb\community_water_supply_problem_finished.cs" />
+    <Compile Include="TTGWeb\concil_house.cs" />
+    <Compile Include="TTGWeb\construction_phase.cs" />
+    <Compile Include="TTGWeb\counterpart_and_other_project.cs" />
+    <Compile Include="TTGWeb\counterpart_investment_finished_situation.cs" />
+    <Compile Include="TTGWeb\counterpart_investment_placed_situation.cs" />
+    <Compile Include="TTGWeb\download.cs" />
+    <Compile Include="TTGWeb\effect_indicator.cs" />
+    <Compile Include="TTGWeb\effiect_translate.cs" />
+    <Compile Include="TTGWeb\enterprise.cs" />
+    <Compile Include="TTGWeb\errorLog.cs" />
+    <Compile Include="TTGWeb\excel_datatable.cs" />
+    <Compile Include="TTGWeb\excel_message.cs" />
+    <Compile Include="TTGWeb\excel_span_structure.cs" />
+    <Compile Include="TTGWeb\excel_special_structure.cs" />
+    <Compile Include="TTGWeb\excel_status.cs" />
+    <Compile Include="TTGWeb\excel_structure.cs" />
+    <Compile Include="TTGWeb\figure_progress.cs" />
+    <Compile Include="TTGWeb\file.cs" />
+    <Compile Include="TTGWeb\follow_up_investment_plan.cs" />
+    <Compile Include="TTGWeb\grandson_project.cs" />
+    <Compile Include="TTGWeb\grand_investment_case.cs" />
+    <Compile Include="TTGWeb\image_info.cs" />
+    <Compile Include="TTGWeb\important_figures.cs" />
+    <Compile Include="TTGWeb\indicator_unit.cs" />
+    <Compile Include="TTGWeb\investment_finish_situation.cs" />
+    <Compile Include="TTGWeb\investment_place_situation.cs" />
+    <Compile Include="TTGWeb\kindergarten.cs" />
+    <Compile Include="TTGWeb\labor_force.cs" />
+    <Compile Include="TTGWeb\loginLog.cs" />
+    <Compile Include="TTGWeb\monitor_log.cs" />
+    <Compile Include="TTGWeb\notification_info.cs" />
+    <Compile Include="TTGWeb\previously_special_project.cs" />
+    <Compile Include="TTGWeb\project_capital.cs" />
+    <Compile Include="TTGWeb\project_classification_content.cs" />
+    <Compile Include="TTGWeb\project_community.cs" />
+    <Compile Include="TTGWeb\project_investment_plan.cs" />
+    <Compile Include="TTGWeb\project_physical.cs" />
+    <Compile Include="TTGWeb\project_progress.cs" />
+    <Compile Include="TTGWeb\right.cs" />
+    <Compile Include="TTGWeb\road.cs" />
+    <Compile Include="TTGWeb\sample.cs" />
+    <Compile Include="TTGWeb\service_radius.cs" />
+    <Compile Include="TTGWeb\subproject_accomplish_quantity.cs" />
+    <Compile Include="TTGWeb\subproject_new.cs" />
+    <Compile Include="TTGWeb\subproject_physical_finish_situation.cs" />
+    <Compile Include="TTGWeb\subproject_project_associate.cs" />
+    <Compile Include="TTGWeb\subsequent_project.cs" />
+    <Compile Include="TTGWeb\user.cs" />
+    <Compile Include="TTGWeb\wcommunity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

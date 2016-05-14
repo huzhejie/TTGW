@@ -1,0 +1,141 @@
+﻿
+.detail {
+	margin-top: 20px;
+	background-image: url(../Images/block_background.png);
+}
+.detail ul {
+	list-style-type: none;
+}
+.detail ul li {
+	height: 30px;
+	font-size: 14px;
+	line-height: 30px;
+}
+
+.homeTitle {
+	height: 30px;
+	font-size: 17px;
+	font-weight: bold;
+	color: #008D7C;
+	width: 60%;
+}
+.enTitle {
+	height: 30px;
+	font-size: 14px;
+	color: #008D7C;
+	width: 100%;
+}
+
+.item {
+	height: 40px;
+	font-size: 17px;
+	font-weight: bold;
+	line-height: 40px;
+	text-align: left;
+}
+
+.listContent {
+	background-color: #F8F8F8;
+	filter: alpha(opacity=80);
+	-moz-opacity: 0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+}
+
+.listContent ul {
+	list-style-type: none;
+    height:560px;
+}
+.listContent ul li {
+	height: 30px;
+	font-size: 14px;
+	line-height: 30px;
+}
+
+.longline {
+	background-color: #008D7C;
+	width: 100%;
+	height: 2px;
+	margin-top: 2px;
+}
+.shortline {
+	background-color: #008D7C;
+	width: 95%;
+	height: 2px;
+	margin-top: 2px;
+}
+
+.dow {
+	float: right;
+	margin-right: 20px;
+	height: 30px;
+	text-align: left;
+}
+.textcontent {
+	width: 800px;
+	margin: 0 auto;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	text-align: justify;
+	filter: alpha(opacity=100);
+	-moz-opacity: 1;
+	-khtml-opacity: 1;
+	opacity: 1;
+}
+.textcontent p {
+	text-indent: 3em;
+}
+.textcontent p img {
+	max-width: 90%;
+	max-height: 350px;
+	margin: 0 auto;
+	display: block;
+}
+
+.annDetail {
+	background-color: #F4FFEC;
+	filter: alpha(opacity=80);
+	-moz-opacity: 0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+	margin-top: 30px;
+	min-height: 700px;
+}
+.ptitle
+{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+        .ptitle + p
+        {
+            font-size: 15px;
+            text-align: center;
+        }
+.pages {
+	color: #999;
+	overflow: auto;
+	margin-top: 20px;
+}
+.pages a, .pages .cpb {
+	text-decoration: none;
+	/*float: left;*/
+	padding: 0 5px;
+	border: 1px solid #ddd;
+	background-color: #fff0f0;
+	margin: 0 2px;
+	font-size: 14px;
+}
+.pages a:hover {
+	background-color: #E61636;
+	color: #fff;
+	border: 1px solid #E61636;
+	text-decoration: none;
+}
+.pages .cpb {
+	font-weight: bold;
+	color: #fff;
+	background: #E61636;
+	border: 1px solid #E61636;
+}
+

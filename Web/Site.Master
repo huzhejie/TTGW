@@ -1,0 +1,204 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="TTG.Web.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <link href="Css/indexCss.css" rel="stylesheet" type="text/css" />
+    <link href="Css/Main.css" rel="stylesheet" type="text/css" />
+    <script src="Scripts/jquery.min.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="Scripts/allinone_thumbnailsBanner.js" type="text/javascript"></script>
+    <link href="Css/loginArea.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+
+
+        <div class="loginarea" id="logina">
+            <div class="loginArea">
+                <div class="logBox signDialog" style="width: 260px; margin-left: 30px; margin-top: -20px;">
+                    <div class="loginTitle">
+                        <span class="loginTitleText">
+                            <div class="title">
+                                登录
+                            </div>
+                            <%--   <div class="subTitle">
+                            查看数据、各种地区信息</div>--%>
+                        </span>
+                    </div>
+                    <div class="view" style="display: block;">
+                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                            <ContentTemplate>
+                                <div class="inputWrap">
+                                    <input id="userId" class="formTestInput" name="email" type="text" placeholder="账号" runat="server" />
+                                </div>
+                                <div class="inputWrap">
+                                    <input id="password" class="formTestInput" maxlength="128" name="password" type="password"
+                                        placeholder="密码" runat="server" />
+                                    <div class="icoShowPass">
+                                    </div>
+                                </div>
+                                <div class="inputWrap" style="width: 50%; float: left;">
+                                    <input id="Code" class="formTestInput" name="tet" type="text" placeholder="验证码" runat="server" />
+                                </div>
+                                <div class="fl" style="width: 50%; height: 47px;">
+                                   
+                                    <img alt="" id="checkimg" src="CheckCode.aspx" onclick="this.src=this.src+'?'" style="margin-top: 12px; margin-left: 35px;" />
+
+                                </div>
+                                <div class="command">                        
+                                    <asp:Button ID="LoadingBtn" runat="server" Text="登录" CssClass="fl submitStyle" OnClick="LoadingBtn_Click" />                                    
+                                </div>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hidebcg" id="hidebg">
+        </div>
+        <div class="container" id="ct" style="z-index: 1;">
+
+            <div class="QRcode" id="woc">
+                <img src="img/code.png" alt="" />
+                <p>
+                    APP
+                </p>
+                <p>
+                    邀您加入
+                </p>
+            </div>
+            <div class="QRcode2">
+                <img src="img/code.png" alt="" />
+                <p>
+                    APP
+                </p>
+                <p>
+                    邀您加入
+                </p>
+            </div>
+            <div class="GetBack" id="getbackdiv">
+
+                <p>
+                    返回顶部 
+                </p>
+
+            </div>
+            <div class="header">
+            </div>
+
+            <div class="navBar">
+                <ul>
+                    <li style="margin-left: 0px;"><a href="SingleListbf.aspx" target="_blank">综合帮扶信息</a></li>
+                    <li style="margin-left: 66px;"><a href="SingleListxc.aspx" target="_blank">现场监测动态</a></li>
+                    <li style="margin-left: 66px;"><a href="SingleListxq.aspx" target="_blank">小区帮扶标准规范</a></li>
+                    <li style="margin-left: 66px;"><a href="SingleListjz.aspx" target="_blank">居住环境规程规范</a></li>
+                    <li style="margin-left: 70px;"><a href="SingleListqx.aspx" target="_blank">区县培训及就业信息</a></li>
+                    <li style="margin-left: 60px;"><a href="javascript:void(0);" id="loginlink">登录</a></li>
+                </ul>
+            </div>
+
+
+
+            <div class="section">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+
+            <div class="fl friendLinks">
+                <div class="section">
+                    <div class="fl left">
+                        <span>相关链接:</span> <a href="http://www.crhdc.com.cn/" target="_blank">长江水利水电开发总公司</a>
+                        | <a href="http://www.3g.gov.cn/index.ycs" target="_blank">国务院三峡工程建设委员会办公室</a> |
+                    <a href="http://www.cjw.gov.cn/Index.html" target="_blank">水利部长江水利委员会</a> | <a href="http://www.mwr.gov.cn/"
+                        target="_blank">中国水利部 </a>| <a href="http://www.mohurd.gov.cn/" target="_blank">中国建设部</a>
+                        |
+                    </div>
+                    <div class="fr right">
+                        子公司链接：
+                    <select name="compLink" id="compLink" class="selects" onchange="window.open(this.value)">
+                        <option value="#">湖北分公司</option>
+                        <option value="#">重庆分公司</option>
+                        <option value="#">四川分公司</option>
+                        <option value="#">云南分公司</option>
+                        <option value="#">贵州分公司</option>
+                    </select>
+                    </div>
+                </div>
+            </div>
+            <div class="myfooter">
+                <div class="section">
+                    <div class="fl footleft">
+                        地址：湖北省武汉市江岸区解放大道1863号 邮编：430010 联系电话：027－82820272
+                    <br>
+                        版权所有© Copyright © 2011 All Rights Reserved 鄂ICP备05003448
+                    </div>
+                    <div class="fr footright">
+                        <a href="/News/Recruitment.aspx?cid=514">人才招聘 </a>| <a href="/News/Contact.aspx?cid=526">联系我们 </a>| <a href="/News/Message.aspx?cid=516">留言反馈</a><br />
+                        总访问量：32768次 <a href="/_JBRIEMS/Index.aspx" target="_blank">管理</a> <a href="http://www.cjwym.com.cn/"
+                            target="_blank">技术支持</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+<script src="JS/util.js" type="text/javascript"></script>
+<script type="text/javascript">
+    //绑定click事件
+    addEvent($getId("getbackdiv"), "click", getback);
+    addEvent($getId("hidebg"), "click", hidelogin);
+    addEvent($getId("loginlink"), "click", showlogin);
+
+    //页面滚动时控制返回顶部按钮的位置
+    addEvent(window, "scroll", function () {
+        var sh = document.documentElement.scrollTop || document.body.scrollTop;
+        var n = document.getElementById("getbackdiv");
+        if (sh > 80 && sh < 940) {
+            n.style.top = sh + 620 + "px";
+        } else if (sh <= 80) {
+            n.style.top = "700px";
+        } else {
+            n.style.top = "1560px";
+        }
+
+    });
+    //返回顶部
+    function getback() {
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        var n = document.getElementById("navigator");
+        n.style.top = "0px";
+    }
+
+    //显示登陆的块
+    function showlogin() {
+        $getId("hidebg").style.height = document.body.clientHeight + "px";  //设置隐藏层的高度为当前页面高度      
+        setDisplay(["hidebg", "logina"], "block");
+        //改变验证码
+        var _this = document.getElementById("checkimg");
+        _this.src = _this.src + '?Id'+Math.random();
+    }
+
+    //隐藏登陆的块
+    function hidelogin() {
+        setDisplay(["hidebg", "logina"], "none")
+        document.getElementById("hidebg").style.height = "0px";
+        //改变验证码
+    
+
+    }
+    function openIndex(url) {
+        window.open(url);
+        hidelogin();
+    }
+    
+</script>
+</html>

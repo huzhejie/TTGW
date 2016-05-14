@@ -1,0 +1,1077 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ESRI.ArcGIS.ADF.ArcGISServer.Local</name>
+    </assembly>
+    <members>
+        <member name="T:ESRI.ArcGIS.ADF.ArcGISServer.CatalogDcom">
+            <summary>
+            An ArcGIS Server Catalog proxy used when communicating with the server over DCOM.
+            </summary>
+            <remarks>
+            Asynchronous methods inherited from the Web service proxy base class are not
+            supported over DCOM. This includes the Begin\End and Async\Completed patterns. More
+            specifically any asynchronous method names that start with Begin or End or end with
+            Async are not supported. Any asynchronous events that end with Completed are not
+            supported.
+            </remarks>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.CatalogDcom.#ctor(ESRI.ArcGIS.ADF.Connection.AGS.AGSServerConnection,System.Boolean)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="connection">ArcGIS Server connection.</param>
+            <param name="releaseServerOnDispose">Indicates if the connection should be released on Dispose.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.CatalogDcom.#ctor(ESRI.ArcGIS.Server.IServerObjectManager)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="manager">ArcGIS Server object manager.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.CatalogDcom.GetServiceDescriptionsEx(System.String)">
+            <summary>
+            Obtains the descriptions for the GIS services in the specified folder.
+            </summary>
+            <param name="folderName">Folder to obtain descriptions for.</param>
+            <returns>Array of service description objects.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.CatalogDcom.GetServiceDescriptions">
+            <summary>
+            Obtains the descriptions for GIS services on the server.
+            </summary>
+            <returns>Array of service description objects.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.CatalogDcom.GetFolders">
+            <summary>
+            Obtains a list of folders on the GIS server.
+            </summary>
+            <returns>Array of names of the folders.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.CatalogDcom.GetMessageFormats">
+            <summary>
+            Obtains the message format (SOAP and/or binary) for the catalog.
+            </summary>
+            <returns>Message format (SOAP and/or binary).</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.CatalogDcom.GetMessageVersion">
+            <summary>
+            Gets the version of the server's messages.
+            </summary>
+            <returns>Version number.</returns>
+        </member>
+        <member name="T:ESRI.ArcGIS.ADF.ArcGISServer.MapServerDcomProxy">
+            <summary>
+            An ArcGIS Server map server proxy used when communicating with the server over DCOM.
+            </summary>
+            <remarks>
+            Asynchronous methods inherited from the Web service proxy base class are not
+            supported over DCOM. This includes the Begin\End and Async\Completed patterns. More
+            specifically any asynchronous method names that start with Begin or End or end with
+            Async are not supported. Any asynchronous events that end with Completed are not
+            supported.
+            </remarks>
+            <example>
+            	<code lang="CS" description="This example illustrates how to create a MapServerDcomProxy and call ExportMapImage to generate a new map image.">
+            		<![CDATA[
+            ESRI.ArcGIS.ADF.Connection.AGS.AGSServerConnection connection = null;
+            ESRI.ArcGIS.Server.IServerContext serverContext = null;
+             
+            try
+            {
+                connection = new ESRI.ArcGIS.ADF.Connection.AGS.AGSServerConnection();
+             
+                connection.Host = "localhost";
+                connection.Connect();
+             
+                ESRI.ArcGIS.Server.IServerObjectManager serverObjectManager = connection.ServerObjectManager;
+             
+                serverContext = serverObjectManager.CreateServerContext("MyMapService", "MapServer");
+             
+                ESRI.ArcGIS.ADF.ArcGISServer.MapServerDcomProxy mapservice = new
+                    ESRI.ArcGIS.ADF.ArcGISServer.MapServerDcomProxy(serverContext, true);
+             
+                ESRI.ArcGIS.ADF.ArcGISServer.MapServerInfo mapinfo = mapservice.GetServerInfo(mapservice.GetDefaultMapName());
+                ESRI.ArcGIS.ADF.ArcGISServer.MapDescription mapdesc = mapinfo.DefaultMapDescription;
+             
+                ESRI.ArcGIS.ADF.ArcGISServer.ImageType imgtype = new ESRI.ArcGIS.ADF.ArcGISServer.ImageType();
+                imgtype.ImageFormat = ESRI.ArcGIS.ADF.ArcGISServer.esriImageFormat.esriImagePNG;
+                imgtype.ImageReturnType = ESRI.ArcGIS.ADF.ArcGISServer.esriImageReturnType.esriImageReturnURL;
+             
+                ESRI.ArcGIS.ADF.ArcGISServer.ImageDisplay imgdisp = 
+                    new ESRI.ArcGIS.ADF.ArcGISServer.ImageDisplay();
+                imgdisp.ImageHeight = 500;
+                imgdisp.ImageWidth = 500;
+                imgdisp.ImageDPI = 96;
+             
+                ESRI.ArcGIS.ADF.ArcGISServer.ImageDescription imgdesc = 
+                    new ESRI.ArcGIS.ADF.ArcGISServer.ImageDescription();
+                imgdesc.ImageDisplay = imgdisp;
+                imgdesc.ImageType = imgtype;
+             
+                ESRI.ArcGIS.ADF.ArcGISServer.MapImage mapimg = mapservice.ExportMapImage(mapdesc, imgdesc);
+             
+                System.Net.HttpWebRequest webreq = System.Net.WebRequest.Create(mapimg.ImageURL) as HttpWebRequest;
+                System.Net.HttpWebResponse webresp = webreq.GetResponse() as HttpWebResponse;
+                System.Drawing.Image img = System.Drawing.Image.FromStream(webresp.GetResponseStream());
+            }
+            catch (Exception ex){}
+            finally
+            {
+                serverContext.ReleaseContext();
+                connection.Dispose();
+            }]]>
+            	</code>
+            </example>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.MapServerDcomProxy.#ctor(ESRI.ArcGIS.Server.IServerContext,System.Boolean)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="context">Server context.</param>
+            <param name="releaseContextOnDispose">Whether to explicitly release the
+            server context when the proxy is disposed. Used for pooled vs. nonpooled services.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.MapServerDcomProxy.#ctor(ESRI.ArcGIS.Server.IServerContext,System.Boolean,ESRI.ArcGIS.ADF.ArcGISServer.DcomProxy)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="context">Server context.</param>
+            <param name="releaseContextOnDispose">Whether to explicitly release the
+            server context when the proxy is disposed. Used for pooled vs. nonpooled services.</param>
+            <param name="proxy">The DCOM proxy to use.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.MapServerDcomProxy.Dispose(System.Boolean)">
+            <summary>
+            Disposes of resources used by the proxy.
+            </summary>
+            <param name="disposing">True if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.MapServerDcomProxy.GetWebRequest(System.Uri)">
+            <summary>
+            Obtains the WebRequest used by the proxy.
+            </summary>
+            <param name="uri">URI in the request.</param>
+            <returns>WebRequest used by the proxy.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.MapServerDcomProxy.GetWriterForMessage(System.Web.Services.Protocols.SoapClientMessage,System.Int32)">
+            <summary>
+            Creates an XML writer for message writing.
+            </summary>
+            <param name="message">SOAP data.</param>
+            <param name="bufferSize">Buffer size.</param>
+            <returns>XML writer.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.MapServerDcomProxy.GetWebResponse(System.Net.WebRequest)">
+            <summary>
+            Sends the request to the server and gets the response.
+            </summary>
+            <param name="request">The WebRequest for handling messages.</param>
+            <returns>Web response with custom properties.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.MapServerDcomProxy.SetETagToMatch(System.String)">
+            <summary>
+            Sets ETag string to match against hashcode returned from the server.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.MapServerDcomProxy.GetETag">
+            <summary>
+            Returns ETag string generated by last response from the server.
+            </summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.ADF.ArcGISServer.MapServerDcomProxy.DcomProxy">
+            <summary>
+            Returns the DCOM proxy used by the map server proxy.
+            </summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.ADF.ArcGISServer.MapServerDcomProxy.ServerContext">
+            <summary>
+            The ArcGIS server context.
+            </summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.ADF.ArcGISServer.GeocodeServerDcomProxy">
+            <summary>
+            An ArcGIS Server geocode server proxy used when communicating with the server over DCOM.
+            </summary>
+            <remarks>
+            Asynchronous methods inherited from the Web service proxy base class are not
+            supported over DCOM. This includes the Begin\End and Async\Completed patterns. More
+            specifically any asynchronous method names that start with Begin or End or end with
+            Async are not supported. Any asynchronous events that end with Completed are not
+            supported.
+            </remarks>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GeocodeServerDcomProxy.#ctor(ESRI.ArcGIS.Server.IServerContext,System.Boolean)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="context">Server context.</param>
+            <param name="releaseContextOnDispose">Whether to explicitly release the
+            server context when the proxy is disposed. Used for pooled vs. nonpooled services.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GeocodeServerDcomProxy.#ctor(ESRI.ArcGIS.Server.IServerContext,System.Boolean,ESRI.ArcGIS.ADF.ArcGISServer.DcomProxy)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="context">Server context.</param>
+            <param name="releaseContextOnDispose">Whether to explicitly release the
+            server context when the proxy is disposed. Used for pooled vs. nonpooled services.</param>
+            <param name="proxy">The DCOM proxy to use.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GeocodeServerDcomProxy.SetETagToMatch(System.String)">
+            <summary>
+            Sets ETag string to match against hashcode returned from the server.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GeocodeServerDcomProxy.GetETag">
+            <summary>
+            Returns ETag string generated by last response from the server.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GeocodeServerDcomProxy.Dispose(System.Boolean)">
+            <summary>
+            Disposes of resources used by the proxy.
+            </summary>
+            <param name="disposing">True if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GeocodeServerDcomProxy.GetWebRequest(System.Uri)">
+            <summary>
+            Obtains the WebRequest used by the proxy.
+            </summary>
+            <param name="uri">URI in the request.</param>
+            <returns>WebRequest used by the proxy.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GeocodeServerDcomProxy.GetWriterForMessage(System.Web.Services.Protocols.SoapClientMessage,System.Int32)">
+            <summary>
+            Creates an XML writer for message writing.
+            </summary>
+            <param name="message">SOAP data.</param>
+            <param name="bufferSize">Buffer size.</param>
+            <returns>XML writer.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GeocodeServerDcomProxy.GetWebResponse(System.Net.WebRequest)">
+            <summary>
+            Sends the request to the server and gets the response.
+            </summary>
+            <param name="request">The WebRequest for handling messages.</param>
+            <returns>Web response with custom properties.</returns>
+        </member>
+        <member name="P:ESRI.ArcGIS.ADF.ArcGISServer.GeocodeServerDcomProxy.DcomProxy">
+            <summary>
+            Returns the DCOM proxy used by the geocode server proxy.
+            </summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.ADF.ArcGISServer.GeocodeServerDcomProxy.ServerContext">
+            <summary>
+            The ArcGIS server context.
+            </summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.ADF.ArcGISServer.NAServerDcomProxy">
+            <summary>
+            An ArcGIS Server network-analyst server proxy used when communicating with the server over DCOM.
+            </summary>
+            <remarks>
+            Asynchronous methods inherited from the Web service proxy base class are not
+            supported over DCOM. This includes the Begin\End and Async\Completed patterns. More
+            specifically any asynchronous method names that start with Begin or End or end with
+            Async are not supported. Any asynchronous events that end with Completed are not
+            supported.
+            </remarks>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.NAServerDcomProxy.#ctor(ESRI.ArcGIS.Server.IServerContext,System.Boolean)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="context">Server context.</param>
+            <param name="releaseContextOnDispose">Whether to explicitly release the
+            server context when the proxy is disposed. Used for pooled vs. nonpooled services.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.NAServerDcomProxy.#ctor(ESRI.ArcGIS.Server.IServerContext,System.Boolean,ESRI.ArcGIS.ADF.ArcGISServer.DcomProxy)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="context">Server context.</param>
+            <param name="releaseContextOnDispose">Whether to explicitly release the
+            server context when the proxy is disposed. Used for pooled vs. nonpooled services.</param>
+            <param name="proxy">The DCOM proxy to use.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.NAServerDcomProxy.SetETagToMatch(System.String)">
+            <summary>
+            Sets ETag string to match against hashcode returned from the server.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.NAServerDcomProxy.GetETag">
+            <summary>
+            Returns ETag string generated by last response from the server.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.NAServerDcomProxy.Dispose(System.Boolean)">
+            <summary>
+            Disposes of resources used by the proxy.
+            </summary>
+            <param name="disposing">True if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.NAServerDcomProxy.GetWebRequest(System.Uri)">
+            <summary>
+            Obtains the WebRequest used by the proxy.
+            </summary>
+            <param name="uri">URI in the request.</param>
+            <returns>WebRequest used by the proxy.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.NAServerDcomProxy.GetWriterForMessage(System.Web.Services.Protocols.SoapClientMessage,System.Int32)">
+            <summary>
+            Creates an XML writer for message writing.
+            </summary>
+            <param name="message">SOAP data.</param>
+            <param name="bufferSize">Buffer size.</param>
+            <returns>XML writer.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.NAServerDcomProxy.GetWebResponse(System.Net.WebRequest)">
+            <summary>
+            Sends the request to the server and gets the response.
+            </summary>
+            <param name="request">The WebRequest for handling messages.</param>
+            <returns>Web response with custom properties.</returns>
+        </member>
+        <member name="P:ESRI.ArcGIS.ADF.ArcGISServer.NAServerDcomProxy.DcomProxy">
+            <summary>
+            Returns the DCOM proxy used by the NA server proxy.
+            </summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.ADF.ArcGISServer.NAServerDcomProxy.ServerContext">
+            <summary>
+            The ArcGIS server context.
+            </summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.ADF.ArcGISServer.FeatureServerDcomProxy">
+            <summary>
+            An ArcGIS Server feature server proxy used when communicating with the server over DCOM.
+            </summary>
+            <remarks>
+            Asynchronous methods inherited from the Web service proxy base class are not
+            supported over DCOM. This includes the Begin\End and Async\Completed patterns. More
+            specifically any asynchronous method names that start with Begin or End or end with
+            Async are not supported. Any asynchronous events that end with Completed are not
+            supported.
+            </remarks>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.FeatureServerDcomProxy.#ctor(ESRI.ArcGIS.Server.IServerContext,System.Boolean)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="context">Server context.</param>
+            <param name="releaseContextOnDispose">Whether to explicitly release the
+            server context when the proxy is disposed. Used for pooled vs. nonpooled services.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.FeatureServerDcomProxy.#ctor(ESRI.ArcGIS.Server.IServerContext,System.Boolean,ESRI.ArcGIS.ADF.ArcGISServer.DcomProxy)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="context">Server context.</param>
+            <param name="releaseContextOnDispose">Whether to explicitly release the
+            server context when the proxy is disposed. Used for pooled vs. nonpooled services.</param>
+            <param name="proxy">The DCOM proxy to use.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.FeatureServerDcomProxy.SetETagToMatch(System.String)">
+            <summary>
+            Sets ETag string to match against hashcode returned from the server.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.FeatureServerDcomProxy.GetETag">
+            <summary>
+            Returns ETag string generated by last response from the server.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.FeatureServerDcomProxy.Dispose(System.Boolean)">
+            <summary>
+            Disposes of resources used by the proxy.
+            </summary>
+            <param name="disposing">True if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.FeatureServerDcomProxy.GetWebRequest(System.Uri)">
+            <summary>
+            Obtains the WebRequest used by the proxy.
+            </summary>
+            <param name="uri">URI in the request.</param>
+            <returns>WebRequest used by the proxy.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.FeatureServerDcomProxy.GetWriterForMessage(System.Web.Services.Protocols.SoapClientMessage,System.Int32)">
+            <summary>
+            Creates an XML writer for message writing.
+            </summary>
+            <param name="message">SOAP data.</param>
+            <param name="bufferSize">Buffer size.</param>
+            <returns>XML writer.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.FeatureServerDcomProxy.GetWebResponse(System.Net.WebRequest)">
+            <summary>
+            Sends the request to the server and gets the response.
+            </summary>
+            <param name="request">The WebRequest for handling messages.</param>
+            <returns>Web response with custom properties.</returns>
+        </member>
+        <member name="P:ESRI.ArcGIS.ADF.ArcGISServer.FeatureServerDcomProxy.DcomProxy">
+            <summary>
+            Returns the DCOM proxy used by the NA server proxy.
+            </summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.ADF.ArcGISServer.FeatureServerDcomProxy.ServerContext">
+            <summary>
+            The ArcGIS server context.
+            </summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.ADF.ArcGISServer.GPServerDcomProxy">
+            <summary>
+            An ArcGIS Server geoprocessing server proxy used when communicating with the server over DCOM.
+            </summary>
+            <remarks>
+            Asynchronous methods inherited from the Web service proxy base class are not
+            supported over DCOM. This includes the Begin\End and Async\Completed patterns. More
+            specifically any asynchronous method names that start with Begin or End or end with
+            Async are not supported. Any asynchronous events that end with Completed are not
+            supported.
+            </remarks>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GPServerDcomProxy.#ctor(ESRI.ArcGIS.Server.IServerContext,System.Boolean)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="context">Server context.</param>
+            <param name="releaseContextOnDispose">Whether to explicitly release the
+            server context when the proxy is disposed. Used for pooled vs. nonpooled services.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GPServerDcomProxy.#ctor(ESRI.ArcGIS.Server.IServerContext,System.Boolean,ESRI.ArcGIS.ADF.ArcGISServer.DcomProxy)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="context">Server context.</param>
+            <param name="releaseContextOnDispose">Whether to explicitly release the
+            server context when the proxy is disposed. Used for pooled vs. nonpooled services.</param>
+            <param name="proxy">The DCOM proxy to use.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GPServerDcomProxy.SetETagToMatch(System.String)">
+            <summary>
+            Sets ETag string to match against hashcode returned from the server.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GPServerDcomProxy.GetETag">
+            <summary>
+            Returns ETag string generated by last response from the server.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GPServerDcomProxy.Dispose(System.Boolean)">
+            <summary>
+            Disposes of resources used by the proxy.
+            </summary>
+            <param name="disposing">True if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GPServerDcomProxy.GetWebRequest(System.Uri)">
+            <summary>
+            Obtains the WebRequest used by the proxy.
+            </summary>
+            <param name="uri">URI in the request.</param>
+            <returns>WebRequest used by the proxy.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GPServerDcomProxy.GetWriterForMessage(System.Web.Services.Protocols.SoapClientMessage,System.Int32)">
+            <summary>
+            Creates an XML writer for message writing.
+            </summary>
+            <param name="message">SOAP data.</param>
+            <param name="bufferSize">Buffer size.</param>
+            <returns>XML writer.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GPServerDcomProxy.GetWebResponse(System.Net.WebRequest)">
+            <summary>
+            Sends the request to the server and gets the response.
+            </summary>
+            <param name="request">The WebRequest for handling messages.</param>
+            <returns>Web response with custom properties.</returns>
+        </member>
+        <member name="P:ESRI.ArcGIS.ADF.ArcGISServer.GPServerDcomProxy.DcomProxy">
+            <summary>
+            Returns the DCOM proxy used by the GP server proxy.
+            </summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.ADF.ArcGISServer.GPServerDcomProxy.ServerContext">
+            <summary>
+            The ArcGIS server context.
+            </summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.ADF.ArcGISServer.GeoDataServerDcomProxy">
+            <summary>
+            An ArcGIS Server geodata server proxy used when communicating with the server over DCOM.
+            </summary>
+            <remarks>
+            Asynchronous methods inherited from the Web service proxy base class are not
+            supported over DCOM. This includes the Begin\End and Async\Completed patterns. More
+            specifically any asynchronous method names that start with Begin or End or end with
+            Async are not supported. Any asynchronous events that end with Completed are not
+            supported.
+            </remarks>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GeoDataServerDcomProxy.#ctor(ESRI.ArcGIS.Server.IServerContext,System.Boolean)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="context">Server context.</param>
+            <param name="releaseContextOnDispose">Whether to explicitly release the
+            server context when the proxy is disposed. Used for pooled vs. nonpooled services.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GeoDataServerDcomProxy.#ctor(ESRI.ArcGIS.Server.IServerContext,System.Boolean,ESRI.ArcGIS.ADF.ArcGISServer.DcomProxy)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="context">Server context.</param>
+            <param name="releaseContextOnDispose">Whether to explicitly release the
+            server context when the proxy is disposed. Used for pooled vs. nonpooled services.</param>
+            <param name="proxy">The DCOM proxy to use.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GeoDataServerDcomProxy.SetETagToMatch(System.String)">
+            <summary>
+            Sets ETag string to match against hashcode returned from the server.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GeoDataServerDcomProxy.GetETag">
+            <summary>
+            Returns ETag string generated by last response from the server.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GeoDataServerDcomProxy.Dispose(System.Boolean)">
+            <summary>
+            Disposes of resources used by the proxy.
+            </summary>
+            <param name="disposing">True if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GeoDataServerDcomProxy.GetWebRequest(System.Uri)">
+            <summary>
+            Obtains the WebRequest used by the proxy.
+            </summary>
+            <param name="uri">URI in the request.</param>
+            <returns>WebRequest used by the proxy.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GeoDataServerDcomProxy.GetWriterForMessage(System.Web.Services.Protocols.SoapClientMessage,System.Int32)">
+            <summary>
+            Creates an XML writer for message writing.
+            </summary>
+            <param name="message">SOAP data.</param>
+            <param name="bufferSize">Buffer size.</param>
+            <returns>XML writer.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GeoDataServerDcomProxy.GetWebResponse(System.Net.WebRequest)">
+            <summary>
+            Sends the request to the server and gets the response.
+            </summary>
+            <param name="request">The WebRequest for handling messages.</param>
+            <returns>Web response with custom properties.</returns>
+        </member>
+        <member name="P:ESRI.ArcGIS.ADF.ArcGISServer.GeoDataServerDcomProxy.DcomProxy">
+            <summary>
+            Returns the DCOM proxy used by the geodata server proxy.
+            </summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.ADF.ArcGISServer.GeoDataServerDcomProxy.ServerContext">
+            <summary>
+            The ArcGIS server context.
+            </summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.ADF.ArcGISServer.GeometryServerDcomProxy">
+            <summary>
+            An ArcGIS Server geometry server proxy used when communicating with the server over DCOM.
+            </summary>
+            <remarks>
+            Asynchronous methods inherited from the Web service proxy base class are not
+            supported over DCOM. This includes the Begin\End and Async\Completed patterns. More
+            specifically any asynchronous method names that start with Begin or End or end with
+            Async are not supported. Any asynchronous events that end with Completed are not
+            supported.
+            </remarks>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GeometryServerDcomProxy.#ctor(ESRI.ArcGIS.Server.IServerContext,System.Boolean)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="context">Server context.</param>
+            <param name="releaseContextOnDispose">Whether to explicitly release the
+            server context when the proxy is disposed. Used for pooled vs. nonpooled services.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GeometryServerDcomProxy.#ctor(ESRI.ArcGIS.Server.IServerContext,System.Boolean,ESRI.ArcGIS.ADF.ArcGISServer.DcomProxy)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="context">Server context.</param>
+            <param name="releaseContextOnDispose">Whether to explicitly release the
+            server context when the proxy is disposed. Used for pooled vs. nonpooled services.</param>
+            <param name="proxy">The DCOM proxy to use.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GeometryServerDcomProxy.SetETagToMatch(System.String)">
+            <summary>
+            Sets ETag string to match against hashcode returned from the server.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GeometryServerDcomProxy.GetETag">
+            <summary>
+            Returns ETag string generated by last response from the server.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GeometryServerDcomProxy.Dispose(System.Boolean)">
+            <summary>
+            Disposes of resources used by the proxy.
+            </summary>
+            <param name="disposing">True if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GeometryServerDcomProxy.GetWebRequest(System.Uri)">
+            <summary>
+            Obtains the WebRequest used by the proxy.
+            </summary>
+            <param name="uri">URI in the request.</param>
+            <returns>WebRequest used by the proxy.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GeometryServerDcomProxy.GetWriterForMessage(System.Web.Services.Protocols.SoapClientMessage,System.Int32)">
+            <summary>
+            Creates an XML writer for message writing.
+            </summary>
+            <param name="message">SOAP data.</param>
+            <param name="bufferSize">Buffer size.</param>
+            <returns>XML writer.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GeometryServerDcomProxy.GetWebResponse(System.Net.WebRequest)">
+            <summary>
+            Sends the request to the server and gets the response.
+            </summary>
+            <param name="request">The WebRequest for handling messages.</param>
+            <returns>Web response with custom properties.</returns>
+        </member>
+        <member name="P:ESRI.ArcGIS.ADF.ArcGISServer.GeometryServerDcomProxy.DcomProxy">
+            <summary>
+            Returns the DCOM proxy used by the geometry server proxy.
+            </summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.ADF.ArcGISServer.GeometryServerDcomProxy.ServerContext">
+            <summary>
+            The ArcGIS server context.
+            </summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.ADF.ArcGISServer.ImageServerDcomProxy">
+            <summary>
+            An ArcGIS Server Image Server proxy used when communicating with the server over DCOM.
+            </summary>
+            <remarks>
+            Asynchronous methods inherited from the Web service proxy base class are not
+            supported over DCOM. This includes the Begin\End and Async\Completed patterns. More
+            specifically any asynchronous method names that start with Begin or End or end with
+            Async are not supported. Any asynchronous events that end with Completed are not
+            supported.
+            </remarks>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.ImageServerDcomProxy.#ctor(ESRI.ArcGIS.Server.IServerContext,System.Boolean)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="context">Server context.</param>
+            <param name="releaseContextOnDispose">Whether to explicitly release the
+            server context when the proxy is disposed. Used for pooled vs. nonpooled services.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.ImageServerDcomProxy.#ctor(ESRI.ArcGIS.Server.IServerContext,System.Boolean,ESRI.ArcGIS.ADF.ArcGISServer.DcomProxy)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="context">Server context.</param>
+            <param name="releaseContextOnDispose">Whether to explicitly release the
+            server context when the proxy is disposed. Used for pooled vs. nonpooled services.</param>
+            <param name="proxy">The DCOM proxy to use.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.ImageServerDcomProxy.SetETagToMatch(System.String)">
+            <summary>
+            Sets ETag string to match against hashcode returned from the server.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.ImageServerDcomProxy.GetETag">
+            <summary>
+            Returns ETag string generated by last response from the server.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.ImageServerDcomProxy.Dispose(System.Boolean)">
+            <summary>
+            Disposes of resources used by the proxy.
+            </summary>
+            <param name="disposing">True if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.ImageServerDcomProxy.GetWebRequest(System.Uri)">
+            <summary>
+            Obtains the WebRequest used by the proxy.
+            </summary>
+            <param name="uri">URI in the request.</param>
+            <returns>WebRequest used by the proxy.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.ImageServerDcomProxy.GetWriterForMessage(System.Web.Services.Protocols.SoapClientMessage,System.Int32)">
+            <summary>
+            Creates an XML writer for message writing.
+            </summary>
+            <param name="message">SOAP data.</param>
+            <param name="bufferSize">Buffer size.</param>
+            <returns>XML writer.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.ImageServerDcomProxy.GetWebResponse(System.Net.WebRequest)">
+            <summary>
+            Sends the request to the server and gets the response.
+            </summary>
+            <param name="request">The WebRequest for handling messages.</param>
+            <returns>Web response with custom properties.</returns>
+        </member>
+        <member name="P:ESRI.ArcGIS.ADF.ArcGISServer.ImageServerDcomProxy.DcomProxy">
+            <summary>
+            Returns the DCOM proxy used by the image server proxy.
+            </summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.ADF.ArcGISServer.ImageServerDcomProxy.ServerContext">
+            <summary>
+            The ArcGIS server context.
+            </summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.ADF.ArcGISServer.GlobeServerDcomProxy">
+            <summary>
+            An ArcGIS Server globe server proxy used when communicating with the server over DCOM.
+            </summary>
+            <remarks>
+            Asynchronous methods inherited from the Web service proxy base class are not
+            supported over DCOM. This includes the Begin\End and Async\Completed patterns. More
+            specifically any asynchronous method names that start with Begin or End or end with
+            Async are not supported. Any asynchronous events that end with Completed are not
+            supported.
+            </remarks>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GlobeServerDcomProxy.#ctor(ESRI.ArcGIS.Server.IServerContext,System.Boolean)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="context">Server context.</param>
+            <param name="releaseContextOnDispose">Whether to explicitly release the
+            server context when the proxy is disposed. Used for pooled vs. nonpooled services.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GlobeServerDcomProxy.#ctor(ESRI.ArcGIS.Server.IServerContext,System.Boolean,ESRI.ArcGIS.ADF.ArcGISServer.DcomProxy)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="context">Server context.</param>
+            <param name="releaseContextOnDispose">Whether to explicitly release the
+            server context when the proxy is disposed. Used for pooled vs. nonpooled services.</param>
+            <param name="proxy">The DCOM proxy to use.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GlobeServerDcomProxy.SetETagToMatch(System.String)">
+            <summary>
+            Sets ETag string to match against hashcode returned from the server.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GlobeServerDcomProxy.GetETag">
+            <summary>
+            Returns ETag string generated by last response from the server.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GlobeServerDcomProxy.Dispose(System.Boolean)">
+            <summary>
+            Disposes of resources used by the proxy.
+            </summary>
+            <param name="disposing">True if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GlobeServerDcomProxy.GetWebRequest(System.Uri)">
+            <summary>
+            Obtains the WebRequest used by the proxy.
+            </summary>
+            <param name="uri">URI in the request.</param>
+            <returns>WebRequest used by the proxy.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GlobeServerDcomProxy.GetWriterForMessage(System.Web.Services.Protocols.SoapClientMessage,System.Int32)">
+            <summary>
+            Creates an XML writer for message writing.
+            </summary>
+            <param name="message">SOAP data.</param>
+            <param name="bufferSize">Buffer size.</param>
+            <returns>XML writer.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.GlobeServerDcomProxy.GetWebResponse(System.Net.WebRequest)">
+            <summary>
+            Sends the request to the server and gets the response.
+            </summary>
+            <param name="request">The WebRequest for handling messages.</param>
+            <returns>Web response with custom properties.</returns>
+        </member>
+        <member name="P:ESRI.ArcGIS.ADF.ArcGISServer.GlobeServerDcomProxy.DcomProxy">
+            <summary>
+            Returns the DCOM proxy used by the globe server proxy.
+            </summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.ADF.ArcGISServer.GlobeServerDcomProxy.ServerContext">
+            <summary>
+            The ArcGIS server context.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.MobileServerDcomProxy.#ctor(ESRI.ArcGIS.Server.IServerContext,System.Boolean)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="context">Server context.</param>
+            <param name="releaseContextOnDispose">Whether to explicitly release the
+            server context when the proxy is disposed. Used for pooled vs. nonpooled services.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.MobileServerDcomProxy.#ctor(ESRI.ArcGIS.Server.IServerContext,System.Boolean,ESRI.ArcGIS.ADF.ArcGISServer.DcomProxy)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="context">Server context.</param>
+            <param name="releaseContextOnDispose">Whether to explicitly release the
+            server context when the proxy is disposed. Used for pooled vs. nonpooled services.</param>
+            <param name="proxy">The DCOM proxy to use.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.MobileServerDcomProxy.Dispose(System.Boolean)">
+            <summary>
+            Disposes of resources used by the proxy.
+            </summary>
+            <param name="disposing">True if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.MobileServerDcomProxy.GetWebRequest(System.Uri)">
+            <summary>
+            Obtains the WebRequest used by the proxy.
+            </summary>
+            <param name="uri">URI in the request.</param>
+            <returns>WebRequest used by the proxy.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.MobileServerDcomProxy.GetWriterForMessage(System.Web.Services.Protocols.SoapClientMessage,System.Int32)">
+            <summary>
+            Creates an XML writer for message writing.
+            </summary>
+            <param name="message">SOAP data.</param>
+            <param name="bufferSize">Buffer size.</param>
+            <returns>XML writer.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.MobileServerDcomProxy.GetWebResponse(System.Net.WebRequest)">
+            <summary>
+            Sends the request to the server and gets the response.
+            </summary>
+            <param name="request">The WebRequest for handling messages.</param>
+            <returns>Web response with custom properties.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.MobileServerDcomProxy.SetETagToMatch(System.String)">
+            <summary>
+            Sets ETag string to match against hashcode returned from the server.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.MobileServerDcomProxy.GetETag">
+            <summary>
+            Returns ETag string generated by last response from the server.
+            </summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.ADF.ArcGISServer.MobileServerDcomProxy.DcomProxy">
+            <summary>
+            Returns the DCOM proxy used by the map server proxy.
+            </summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.ADF.ArcGISServer.MobileServerDcomProxy.ServerContext">
+            <summary>
+            The ArcGIS server context.
+            </summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.ADF.ArcGISServer.DcomProxy">
+            <summary>
+            This class handles the communication with the ArcGIS Server
+            machine when using SOAP over DCOM. 
+            </summary>
+            <remarks>For a discussion of communication with 
+            ArcGIS Server, see the topic
+            <a href="ms-help://ESRI.EDNv10.0/NET_Server/15b2ab35-15a1-4570-8e2d-03a7befd97c9.htm">
+            ArcGIS Server Implementation in the Web ADF</a> in the
+            Developer Help (also available online at the
+            <a href="http://resources.arcgis.com/content/web-adf-microsoft-net-framework">
+            ArcGIS Resource Center</a>.</remarks>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.DcomProxy.#ctor(ESRI.ArcGIS.esriSystem.IRequestHandler)">
+            <summary>
+            Constructs a new DcomProxy instance.
+            </summary>
+            <param name="requestHandler">The ArcGIS Server component
+            that will communicate with the server, for example, a MapServer instance.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.DcomProxy.#ctor(System.String,ESRI.ArcGIS.ADF.Identity,System.String,System.String,System.String)">
+            <summary>
+            Constructs a new DcomProxy instance.
+            </summary>
+            <param name="host">The name of the machine where the Server Object Manager exists.</param>
+            <param name="identity">ESRI.ArcGIS.ADF.Identity with username and password for the server.</param>
+            <param name="service">The name of the service to create a DcomProxy for.</param>
+            <param name="serviceType">The type of service to create a DcomProxy for.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.DcomProxy.Finalize">
+            <summary>
+            Destructor for the instance.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.DcomProxy.GetWriterForMessage(System.Web.Services.Protocols.SoapClientMessage,System.Int32)">
+            <summary>
+            Creates an XML writer for message writing.
+            </summary>
+            <param name="message">SOAP data.</param>
+            <param name="bufferSize">Buffer size.</param>
+            <returns>XML writer.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.DcomProxy.GetWebRequest">
+            <summary>
+            Returns a custom web request.
+            </summary>
+            <returns>CustomWebRequest for handling server requests.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.DcomProxy.GetWebResponse(System.Net.WebRequest,System.String)">
+            <summary>
+            Sends the request to the server and gets the response.
+            </summary>
+            <param name="request">The WebRequest for handling messages.</param>
+            <param name="capabilities">Capabilities.</param>
+            <returns>Web response with custom properties.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.DcomProxy.GetETag">
+            <summary>
+            Obtains the ETag string for the last SOAP response received from server.
+            </summary>
+            <returns>Hashcode of SOAP XML response string.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.DcomProxy.SetETagToMatch(System.String)">
+            <summary>
+            Sets ETag string to match against hashcode returned from Server.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.DcomProxy.Dispose">
+            <summary>
+            Disposes of resources used by the instance.
+            </summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.ADF.ArcGISServer.DcomProxy.XmlNamespaceSubstitute">
+            <summary>
+            Substitute value for the namespace.
+            </summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.ADF.ArcGISServer.MatchingETagException">
+            <summary>
+            Do not use.  For use by framework only.
+            </summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.ADF.ArcGISServer.Local.Converter">
+            <summary>
+            Do not use.  For use by framework only.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.Local.Converter.valueObjectToComObject(System.Object,System.Object)">
+            <summary>
+            Do not use.  For use by framework only.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.Local.Converter.comObjectToValueObject(System.Object,System.Object,System.Type)">
+            <summary>
+            Do not use.  For use by framework only.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.Local.Converter.deserializeComObject(System.String,System.Object)">
+            <summary>
+            Do not use.  For use by framework only.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.Local.Converter.ValueObjectToComObject(System.Object,ESRI.ArcGIS.Server.IServerContext)">
+            <summary>
+            Converts an ArcGIS Server object from its .NET proxy "value" type to the
+            corresponding COM type.
+            </summary>
+            <returns>The converted COM object.</returns>
+            <remarks>
+            For a discussion of conversion between value and COM objects with ArcGIS Server
+            see the page
+            <a href="ms-help://ESRI.EDNv10.0/NET_Server/a61e2218-7d09-442b-a31f-2acae79f5be7.htm#ArcGISServer">
+            ArcGIS Server: COM and Value objects</a> in the Web ADF Developer Help
+            (also available online at the
+            <a href="http://resources.arcgis.com/content/web-adf-microsoft-net-framework">
+            ArcGIS Resource Center</a>.
+            </remarks>
+            <param name="proxy">The .NET value object to convert.</param>
+            <param name="context">The ArcGIS Server context that will host the COM object.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.Local.Converter.ComObjectToValueObject(System.Object,ESRI.ArcGIS.Server.IServerContext,System.Type)">
+            <remarks>
+            For a discussion of conversion between value and COM objects with ArcGIS Server
+            see the page
+            <a href="ms-help://ESRI.EDNv10.0/NET_Server/a61e2218-7d09-442b-a31f-2acae79f5be7.htm#ArcGISServer">
+            ArcGIS Server: COM and Value objects</a> in the Web ADF Developer Help
+            (also available online at the
+            <a href="http://resources.arcgis.com/content/web-adf-microsoft-net-framework">
+            ArcGIS Resource Center</a>.
+            </remarks>
+            <summary>Converts an ArcGIS Server COM object to its .NET value object equivalent.</summary>
+            <returns>The converted value object.</returns>
+            <param name="com">The ArcGIS Server COM object to convert.</param>
+            <param name="context">The ArcGIS Server context that will perform the conversion.</param>
+            <param name="proxyType">The .NET proxy type in the Web ADF to convert to.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.Local.Converter.DeserializeComObject(System.String,ESRI.ArcGIS.Server.IServerContext)">
+            <summary>Deserializes a COM object from a string.</summary>
+            <returns>The deserialized ArcGIS Server COM object.</returns>
+            <param name="serialized">The serialized COM object.</param>
+            <param name="context">The ArcGIS Server Context that will host the COM object.</param>
+        </member>
+        <member name="T:ESRI.ArcGIS.ADF.ArcGISServer.RestDcomProxy">
+            <summary>
+            This class handles the communication with the ArcGIS Server
+            machine when sending REST request over DCOM. 
+            </summary>
+            <remarks>For a discussion of communication with 
+            ArcGIS Server, see the topic
+            <a href="ms-help://ESRI.EDNv10.0/NET_Server/15b2ab35-15a1-4570-8e2d-03a7befd97c9.htm">
+            ArcGIS Server Implementation in the Web ADF</a> in the
+            Developer Help (also available online at the
+            <a href="http://resources.arcgis.com/content/web-adf-microsoft-net-framework">
+            ArcGIS Resource Center</a>.</remarks>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.RestDcomProxy.#ctor(System.String,ESRI.ArcGIS.ADF.Identity,System.String,System.String,System.String)">
+            <summary>
+            Constructs a new DcomProxy instance.
+            </summary>
+            <param name="host">The name of the machine where the Server Object Manager exists.</param>
+            <param name="identity">ESRI.ArcGIS.ADF.Identity with username and password for the server.</param>
+            <param name="service">The name of the service to create a DcomProxy for.</param>
+            <param name="serviceType">The type of service to create a DcomProxy for.</param>
+            <param name="extensionName">The name of SOE to create a DcomProxy for.</param>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.RestDcomProxy.Finalize">
+            <summary>
+            Destructor for the instance.
+            </summary>  
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.RestDcomProxy.GetResponse(System.String,System.String,System.String,System.String,System.String,System.String,System.String@)">
+            <summary>
+            Sends the request to the server and gets the response.
+            </summary>
+            <param name="request">The WebRequest for handling messages.</param>
+            <param name="capabilities">Capabilities.</param>
+            <returns>Web response with custom properties.</returns>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.RestDcomProxy.Dispose">
+            <summary>
+            Disposes of resources used by the instance.
+            </summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.ADF.ArcGISServer.RestDcomProxy.RESTRequestHandler">
+            <summary>
+            Exposes COM object that do the real work directly
+            </summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.ADF.ArcGISServer.DcomProxyFactory">
+            <summary>
+            Do not use.  For use by framework only.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.DcomProxyFactory.CreateCatalogDcom(System.String,ESRI.ArcGIS.ADF.Identity,System.String,System.Boolean)">
+            <summary>
+            Do not use.  For use by framework only.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.ADF.ArcGISServer.DcomProxyFactory.CreateDcomProxy(System.String,System.String,ESRI.ArcGIS.ADF.Identity,System.String,System.String,System.String,System.String)">
+            <summary>
+            Do not use.  For use by framework only.
+            </summary>
+        </member>
+    </members>
+</doc>

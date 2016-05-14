@@ -1,0 +1,147 @@
+﻿*{
+	margin:0;padding:0;font-size:12px;
+	}
+	a{
+	text-decoration: none;
+	}
+	img {
+		border:0;
+	}
+			.showDiv{
+				position:relative;
+				margin:0 auto;
+				width: 478px;
+				height: 350px;
+				border:1px solid;
+				cursor: pointer;
+				border: 1px solid rgb(153, 153, 153);
+				background-color: rgb(255,255,255);
+			}
+			.showDivHeader{
+				height: 31px;
+				border-bottom: 1px solid #ccc;
+			}
+
+			.headerTitle{
+				line-height: 30px;
+				height: 30px;
+				white-space: nowrap;
+				overflow: hidden;
+				width: 478px;
+				background-color: rgb(249,249,249);
+			}
+			.addTitle{
+				width: 230px;
+				padding-left: 11px;
+				color: #4d4d4d;
+				font-size: 14px;
+				font-weight: 700;
+				overflow: hidden;
+				white-space: nowrap;			
+
+			}
+
+			.addTitle a.title{
+				margin: 0;
+				color: #4d4d4d;
+				font-size: 14px;
+				font-weight: 700;
+			}
+			
+			.addTitle a.ndetail{
+				padding-left:10px;
+				font-size:12px;
+				font-weight:400;
+				color: #3d6dcc;
+				
+			}
+			
+			.headerButton{
+				float:right;
+				position:absolute;
+				top:0;
+				right:0;
+				height:30px;
+				background-color:#f9f9f9;
+			}
+			.buttonImg{
+			    cursor: pointer;
+				width: 32px;
+				height: 30px;
+			}
+			
+			.buttonImg img{
+			    position: absolute;
+				top: 9px;
+				right: 12px;
+				width: 10px;
+				height: 10px;
+				-moz-user-select: none;
+				cursor: pointer;
+				z-index: 10000;
+			}
+			.showDivBody{
+				width:478px;
+				height:330px;
+				z-index:4;
+				position:relative;
+			}
+			.bodyContent{
+			    width: 478px;
+				height: 320px;
+				overflow: hidden;
+			}
+			
+			.basicInfo{
+				    padding: 9px 11px;
+					border-bottom: 1px solid #f5f5f6;
+			}
+			
+			.headImg{
+				    width: 104px;
+					margin-right: 10px;
+					float: left;
+					cursor: pointer;
+			}
+			
+			.headInfo{
+					line-height: 18px;
+					width: 209px;
+					float: left;
+					color: #333;
+			}
+			
+			.headInfo p{
+					font-size:12px;
+			}
+			
+			.clearfix {
+					zoom: 1;
+				}
+				 .comment {
+					padding: 10px 11px;
+					border-bottom: 1px solid #f5f5f6;
+				}
+				.comment .num{
+					    color: #36c;
+					text-decoration: none;
+						
+				}
+				.comment .desc {
+					padding: 7px 13px;
+					margin-top: 6px;
+					background-color: #f8f9fc;
+					border: 1px solid #f5f5f6;
+					position: relative;
+					line-height: 16px;
+					cursor: pointer;
+				}
+				
+				.comment .desc .arrow {
+						position: absolute;
+						background: url(arrow-top_cb0e290.png) no-repeat;
+						height: 6px;
+						width: 12px;
+						left: 18px;
+						top: -6px;
+			}
